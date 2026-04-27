@@ -26,7 +26,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -35,21 +35,21 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Bebas Neue"', 'sans-serif'],
-            body: ['"Source Sans 3"', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
           },
           colors: {
             brand: {
               yellow: '#F59E0B',
               'yellow-light': '#FCD34D',
               'yellow-dark': '#D97706',
-              dark: '#0F172A',
-              'dark-mid': '#1E293B',
-              'dark-light': '#334155',
+              dark: '#1C1917',
+              'dark-mid': '#292524',
+              'dark-light': '#44403C',
               red: '#DC2626',
               'red-hover': '#B91C1C',
-              slate: '#64748B',
-              light: '#F8FAFC',
+              slate: '#57534E',
+              light: '#FAFAF9',
               white: '#FFFFFF',
               green: '#16A34A',
             }
@@ -62,8 +62,8 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Source Sans 3', sans-serif; color: #0F172A; background: #F8FAFC; }
-    .font-display { font-family: 'Bebas Neue', sans-serif; }
+    body { font-family: 'Inter', sans-serif; color: #1C1917; background: #FAFAF9; }
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
     .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
     .mobile-menu.open { transform: translateX(0); }
   </style>
@@ -158,7 +158,7 @@
             <line x1="14" y1="1" x2="14" y2="4"></line>
             <path d="M12 10l-2 4h4l-2 4"></path>
           </svg>
-          <span class="font-display text-2xl sm:text-3xl text-white tracking-wide">THE BATTERY GUYS</span>
+          <span class="font-display text-2xl sm:text-3xl text-white tracking-tight">THE BATTERY GUYS</span>
         </a>
 
         <div class="hidden md:flex items-center gap-8">
@@ -236,8 +236,8 @@
       </div>
 
       <!-- Title -->
-      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark leading-[0.95] tracking-wide mb-6">
-        HOW TO JUMP START A CAR: STEP-BY-STEP GUIDE
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark leading-[0.95] tracking-tight mb-6">
+        How to Jump Start a Car: Step-by-Step Guide
       </h1>
 
       <p class="text-lg text-brand-slate leading-relaxed mb-8">
@@ -246,7 +246,7 @@
 
       <!-- What You Need -->
       <section class="mb-10">
-        <h2 class="font-display text-3xl text-brand-dark tracking-wide mb-4">WHAT YOU WILL NEED</h2>
+        <h2 class="font-display text-3xl text-brand-dark tracking-tight mb-4">What You Will Need</h2>
         <ul class="space-y-2 text-brand-dark leading-relaxed">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-brand-yellow mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
@@ -265,7 +265,7 @@
 
       <!-- Step-by-Step -->
       <section class="mb-10">
-        <h2 class="font-display text-3xl text-brand-dark tracking-wide mb-6">JUMP START CAR STEPS: THE COMPLETE PROCESS</h2>
+        <h2 class="font-display text-3xl text-brand-dark tracking-tight mb-6">Jump Start Car Steps: the Complete Process</h2>
 
         <ol class="space-y-6">
           <!-- Step 1 -->
@@ -404,7 +404,7 @@
 
       <!-- Safety Warnings -->
       <section class="mb-10 bg-red-50 border border-red-200 rounded-2xl p-6 sm:p-8">
-        <h2 class="font-display text-3xl text-brand-red tracking-wide mb-4">SAFETY WARNINGS</h2>
+        <h2 class="font-display text-3xl text-brand-red tracking-tight mb-4">Safety Warnings</h2>
         <p class="text-brand-dark/80 leading-relaxed mb-4">Jump starting a car involves live electrical connections and battery chemicals. Follow these precautions every single time.</p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
@@ -432,7 +432,7 @@
 
       <!-- When Jumping Won't Work -->
       <section class="mb-10">
-        <h2 class="font-display text-3xl text-brand-dark tracking-wide mb-4">WHEN A JUMP START WILL NOT WORK</h2>
+        <h2 class="font-display text-3xl text-brand-dark tracking-tight mb-4">When a Jump Start Will Not Work</h2>
         <p class="text-brand-dark/80 leading-relaxed mb-4">A jump start is a temporary solution, not a cure. There are situations where no amount of cable time will bring your battery back:</p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
@@ -456,7 +456,7 @@
 
       <!-- CTA -->
       <section class="bg-brand-dark rounded-2xl p-6 sm:p-10 text-center mb-10">
-        <h2 class="font-display text-3xl sm:text-4xl text-white tracking-wide mb-4">NO CABLES? NO HELPER? NO PROBLEM.</h2>
+        <h2 class="font-display text-3xl sm:text-4xl text-white tracking-tight mb-4">No Cables? No Helper? No Problem.</h2>
         <p class="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto mb-6">
           Don't have jumper cables or a second vehicle? Skip the hassle. <strong class="text-white">Call The Battery Guys</strong> -- we come to your location with a brand new battery, install it on the spot, and get you back on the road. No tow truck needed.
         </p>
@@ -473,7 +473,7 @@
 
       <!-- Related Articles -->
       <section>
-        <h2 class="font-display text-3xl text-brand-dark tracking-wide mb-6">RELATED ARTICLES</h2>
+        <h2 class="font-display text-3xl text-brand-dark tracking-tight mb-6">Related Articles</h2>
         <div class="grid sm:grid-cols-2 gap-4">
           <a href="/learn/signs-car-battery-dying" class="group block bg-brand-light border border-gray-200 rounded-xl p-5 hover:border-brand-yellow transition-colors duration-200 cursor-pointer">
             <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200 mb-1">5 Signs Your Car Battery Is Dying</h3>
@@ -496,7 +496,7 @@
 
     </article>
   
-    <section class="mt-16 pt-10 border-t border-gray-200"><h2 class="font-display text-3xl text-brand-dark tracking-wide mb-6">MORE FROM THE LEARNING CENTER</h2><div class="grid sm:grid-cols-3 gap-6"><a href="/learn/signs-car-battery-dying.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">7 Warning Signs Your Battery Is Dying</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a><a href="/learn/car-battery-vs-alternator.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">Battery vs. Alternator: How to Tell</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a><a href="/learn/battery-replacement-cost-south-florida.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">Battery Replacement Cost</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a></div></section>
+    <section class="mt-16 pt-10 border-t border-gray-200"><h2 class="font-display text-3xl text-brand-dark tracking-tight mb-6">More From the Learning Center</h2><div class="grid sm:grid-cols-3 gap-6"><a href="/learn/signs-car-battery-dying.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">7 Warning Signs Your Battery Is Dying</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a><a href="/learn/car-battery-vs-alternator.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">Battery vs. Alternator: How to Tell</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a><a href="/learn/battery-replacement-cost-south-florida.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">Battery Replacement Cost</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a></div></section>
   </main>
 
   <!-- ===== FOOTER ===== -->
@@ -506,13 +506,13 @@
         <div class="sm:col-span-2 lg:col-span-1">
           <a href="/" class="flex items-center gap-2 cursor-pointer" aria-label="Home">
             <svg class="w-7 h-7 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="18" rx="2"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/><path d="M12 10l-2 4h4l-2 4"/></svg>
-            <span class="font-display text-xl text-white tracking-wide">THE BATTERY GUYS</span>
+            <span class="font-display text-xl text-white tracking-tight">THE BATTERY GUYS</span>
           </a>
           <p class="text-white/50 mt-4 text-sm leading-relaxed">South Florida's mobile car battery replacement service. We come to you -- home, office, or roadside. Same-day service, every day.</p>
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">OUR SERVICE</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Our Service</h4>
           <ul class="space-y-2.5">
             <li><a href="/#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Mobile Car Battery Replacement</a></li>
             <li><a href="/#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Truck Battery Installation</a></li>
@@ -524,7 +524,7 @@
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">SERVICE AREAS</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Service Areas</h4>
           <ul class="space-y-2.5">
             <li><a href="/areas/miami-battery-replacement.html" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Battery Replacement Miami</a></li>
             <li><a href="/areas/fort-lauderdale-battery-replacement.html" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Battery Replacement Fort Lauderdale</a></li>
@@ -536,7 +536,7 @@
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">CONTACT</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Contact</h4>
           <ul class="space-y-2.5">
             <li><a href="tel:+18005551234" class="text-brand-yellow font-semibold cursor-pointer">(800) 555-1234</a></li>
             <li><a href="mailto:help@thebatteryguys.com" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">help@thebatteryguys.com</a></li>

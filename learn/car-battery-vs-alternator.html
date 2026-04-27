@@ -29,7 +29,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -38,21 +38,21 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Bebas Neue"', 'sans-serif'],
-            body: ['"Source Sans 3"', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
           },
           colors: {
             brand: {
               yellow: '#F59E0B',
               'yellow-light': '#FCD34D',
               'yellow-dark': '#D97706',
-              dark: '#0F172A',
-              'dark-mid': '#1E293B',
-              'dark-light': '#334155',
+              dark: '#1C1917',
+              'dark-mid': '#292524',
+              'dark-light': '#44403C',
               red: '#DC2626',
               'red-hover': '#B91C1C',
-              slate: '#64748B',
-              light: '#F8FAFC',
+              slate: '#57534E',
+              light: '#FAFAF9',
               white: '#FFFFFF',
               green: '#16A34A',
             }
@@ -65,8 +65,8 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Source Sans 3', sans-serif; color: #0F172A; background: #F8FAFC; }
-    .font-display { font-family: 'Bebas Neue', sans-serif; }
+    body { font-family: 'Inter', sans-serif; color: #1C1917; background: #FAFAF9; }
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
     .hero-article { position: relative; }
     .hero-article::before {
       content: '';
@@ -224,7 +224,7 @@
             <line x1="14" y1="1" x2="14" y2="4"></line>
             <path d="M12 10l-2 4h4l-2 4"></path>
           </svg>
-          <span class="font-display text-2xl sm:text-3xl text-white tracking-wide">THE BATTERY GUYS</span>
+          <span class="font-display text-2xl sm:text-3xl text-white tracking-tight">THE BATTERY GUYS</span>
         </a>
 
         <div class="hidden md:flex items-center gap-8">
@@ -248,7 +248,7 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="mobile-menu fixed inset-y-0 right-0 w-72 bg-brand-dark z-50 shadow-2xl">
       <div class="flex items-center justify-between p-4 border-b border-white/10">
-        <span class="font-display text-xl text-white tracking-wide">MENU</span>
+        <span class="font-display text-xl text-white tracking-tight">Menu</span>
         <button id="mobileMenuClose" class="text-white p-2 cursor-pointer" aria-label="Close menu">
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
@@ -281,7 +281,7 @@
         </ol>
       </nav>
 
-      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white tracking-wide leading-tight">CAR BATTERY VS. ALTERNATOR: HOW TO TELL WHICH ONE FAILED</h1>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">Car Battery vs. Alternator: How to Tell Which One Failed</h1>
       <p class="mt-6 text-lg sm:text-xl text-white/70 max-w-2xl leading-relaxed">Your car won't start -- or worse, it died while you were driving. Is it the battery or the alternator? Here is how to figure it out in under five minutes.</p>
 
       <!-- Author & Date -->
@@ -315,15 +315,15 @@
 
       <!-- Section 1: Quick Test -->
       <section class="mb-12">
-        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mb-4">THE FASTEST WAY TO TELL: JUMP START THE CAR</h2>
+        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mb-4">The Fastest Way to Tell: Jump Start the Car</h2>
         <p class="text-brand-dark/80 leading-relaxed mb-4">If your car will not start, here is the single best diagnostic you can do before calling anyone. Jump start the car -- use jumper cables from another vehicle or a portable jump pack -- and watch what happens next.</p>
         <div class="grid sm:grid-cols-2 gap-4 my-6">
           <div class="bg-green-50 border border-green-200 rounded-xl p-6">
-            <h3 class="font-display text-xl text-green-800 tracking-wide mb-2">CAR RUNS FINE AFTER JUMP</h3>
+            <h3 class="font-display text-xl text-green-800 tracking-tight mb-2">Car Runs Fine After Jump</h3>
             <p class="text-green-700 text-sm leading-relaxed">The <strong>battery</strong> was the problem. It could not hold enough charge to start the engine, but once running, the alternator took over and kept everything powered. You need a new battery.</p>
           </div>
           <div class="bg-red-50 border border-red-200 rounded-xl p-6">
-            <h3 class="font-display text-xl text-red-800 tracking-wide mb-2">CAR DIES AGAIN WITHIN MINUTES</h3>
+            <h3 class="font-display text-xl text-red-800 tracking-tight mb-2">Car Dies Again Within Minutes</h3>
             <p class="text-red-700 text-sm leading-relaxed">The <strong>alternator</strong> is the problem. The jump got the engine running, but without a working alternator to supply power and recharge the battery, the car stalled again. You likely need an alternator repair and possibly a new battery too.</p>
           </div>
         </div>
@@ -332,7 +332,7 @@
 
       <!-- Section 2: Battery Failure Symptoms -->
       <section class="mb-12">
-        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mb-4">BATTERY FAILURE SYMPTOMS</h2>
+        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mb-4">Battery Failure Symptoms</h2>
         <p class="text-brand-dark/80 leading-relaxed mb-4">A dead or dying battery is the most common reason a car will not start. Batteries have a finite lifespan -- typically three to five years in South Florida's heat, which accelerates chemical degradation inside the cells. Here is what a failing battery looks and sounds like.</p>
         <ul class="space-y-3 mb-4">
           <li class="flex items-start gap-3">
@@ -361,7 +361,7 @@
 
       <!-- Section 3: Alternator Failure Symptoms -->
       <section class="mb-12">
-        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mb-4">ALTERNATOR FAILURE SYMPTOMS</h2>
+        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mb-4">Alternator Failure Symptoms</h2>
         <p class="text-brand-dark/80 leading-relaxed mb-4">The alternator is a generator bolted to your engine. It converts mechanical energy from the serpentine belt into electrical energy that powers your car's systems and recharges the battery while the engine runs. When it fails, the battery becomes the only power source -- and it will drain fast. Here is what alternator failure looks like.</p>
         <ul class="space-y-3 mb-4">
           <li class="flex items-start gap-3">
@@ -394,11 +394,11 @@
 
       <!-- Section 4: How to Test Each One -->
       <section class="mb-12">
-        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mb-4">HOW TO TEST WITH A MULTIMETER</h2>
+        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mb-4">How to Test With a Multimeter</h2>
         <p class="text-brand-dark/80 leading-relaxed mb-4">If you have a basic digital multimeter (around $15 at any auto parts store), you can confirm your diagnosis in two minutes. Set the meter to DC volts (the V with a straight line, not the wavy line).</p>
 
         <div class="bg-brand-dark rounded-2xl p-6 sm:p-8 my-6">
-          <h3 class="font-display text-2xl text-brand-yellow tracking-wide mb-4">TEST 1: BATTERY VOLTAGE (ENGINE OFF)</h3>
+          <h3 class="font-display text-2xl text-brand-yellow tracking-tight mb-4">Test 1: Battery Voltage (engine Off)</h3>
           <p class="text-white/70 mb-4 leading-relaxed">Turn the car off. Connect the red multimeter lead to the positive (+) battery terminal and the black lead to the negative (-) terminal. Read the voltage.</p>
           <div class="grid sm:grid-cols-3 gap-3">
             <div class="bg-white/10 rounded-xl p-4 text-center">
@@ -417,7 +417,7 @@
         </div>
 
         <div class="bg-brand-dark rounded-2xl p-6 sm:p-8 my-6">
-          <h3 class="font-display text-2xl text-brand-yellow tracking-wide mb-4">TEST 2: CHARGING VOLTAGE (ENGINE RUNNING)</h3>
+          <h3 class="font-display text-2xl text-brand-yellow tracking-tight mb-4">Test 2: Charging Voltage (engine Running)</h3>
           <p class="text-white/70 mb-4 leading-relaxed">Start the engine (jump it if needed). With the engine running at idle, read the voltage across the battery terminals again.</p>
           <div class="grid sm:grid-cols-3 gap-3">
             <div class="bg-white/10 rounded-xl p-4 text-center">
@@ -440,7 +440,7 @@
 
       <!-- Diagnostic Flowchart in Text -->
       <section class="mb-12">
-        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mb-4">DIAGNOSTIC FLOWCHART</h2>
+        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mb-4">Diagnostic Flowchart</h2>
         <p class="text-brand-dark/80 leading-relaxed mb-4">Here is the decision tree a mechanic walks through mentally. Follow it from the top.</p>
 
         <div class="bg-brand-light border border-gray-200 rounded-2xl p-6 sm:p-8">
@@ -479,7 +479,7 @@
 
       <!-- Section 5: Can a Bad Alternator Kill a Good Battery? -->
       <section class="mb-12">
-        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mb-4">CAN A BAD ALTERNATOR KILL A GOOD BATTERY?</h2>
+        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mb-4">Can a Bad Alternator Kill a Good Battery?</h2>
         <p class="text-brand-dark/80 leading-relaxed mb-4">Yes -- and it happens all the time. Here is the mechanics of why.</p>
         <p class="text-brand-dark/80 leading-relaxed mb-4">When your alternator fails, your car does not immediately stop. It keeps running on battery power alone. The battery was designed to provide a short burst of high current to start the engine and then immediately get recharged by the alternator. It was never meant to power the entire vehicle for an extended period.</p>
         <p class="text-brand-dark/80 leading-relaxed mb-4">Running on battery alone deeply discharges the cells. Lead-acid batteries (the standard type in most cars) suffer permanent damage when they are discharged below about 50% of their capacity. The lead sulfate crystals that form on the plates during discharge harden and become irreversible -- a process called sulfation. Once this happens, the battery loses capacity permanently.</p>
@@ -494,7 +494,7 @@
 
       <!-- Section 6: What The Battery Guys Check -->
       <section class="mb-12">
-        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mb-4">WHAT THE BATTERY GUYS CHECK WHEN WE COME OUT</h2>
+        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mb-4">WHAT THE BATTERY GUYS CHECK WHEN WE COME OUT</h2>
         <p class="text-brand-dark/80 leading-relaxed mb-4">When you call us for a mobile battery replacement, we do not just slap in a new battery and leave. We test the entire charging system on the spot to make sure the real problem gets solved. Here is what we check.</p>
         <div class="grid sm:grid-cols-2 gap-4">
           <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
@@ -530,7 +530,7 @@
 
       <!-- CTA Section -->
       <section class="bg-brand-dark rounded-2xl p-8 sm:p-12 text-center mb-12">
-        <h2 class="font-display text-3xl sm:text-4xl text-white tracking-wide mb-3">NOT SURE WHICH ONE FAILED?</h2>
+        <h2 class="font-display text-3xl sm:text-4xl text-white tracking-tight mb-3">Not Sure Which One Failed?</h2>
         <p class="text-white/60 max-w-xl mx-auto mb-8 leading-relaxed">We will come to your location, test both the battery and alternator on the spot, and give you a straight answer. If you need a new battery, we install it right there. Same-day service across South Florida.</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="tel:+18005551234" class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold px-8 py-4 rounded-xl transition-colors duration-200 text-lg cursor-pointer">
@@ -545,7 +545,7 @@
 
       <!-- Related Articles -->
       <section class="mb-8">
-        <h2 class="font-display text-2xl sm:text-3xl text-brand-dark tracking-wide mb-6">RELATED ARTICLES</h2>
+        <h2 class="font-display text-2xl sm:text-3xl text-brand-dark tracking-tight mb-6">Related Articles</h2>
         <div class="grid sm:grid-cols-2 gap-4">
           <a href="/learn/how-long-do-car-batteries-last" class="group block bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer">
             <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow transition-colors duration-200">How Long Do Car Batteries Last in Florida?</h3>
@@ -560,7 +560,7 @@
 
     </article>
   
-    <section class="mt-16 pt-10 border-t border-gray-200"><h2 class="font-display text-3xl text-brand-dark tracking-wide mb-6">MORE FROM THE LEARNING CENTER</h2><div class="grid sm:grid-cols-3 gap-6"><a href="/learn/signs-car-battery-dying.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">7 Warning Signs Your Battery Is Dying</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a><a href="/learn/how-to-jump-start-car.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">How to Jump Start a Car</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a><a href="/learn/how-long-do-car-batteries-last-florida.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">How Long Do Batteries Last?</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a></div></section>
+    <section class="mt-16 pt-10 border-t border-gray-200"><h2 class="font-display text-3xl text-brand-dark tracking-tight mb-6">More From the Learning Center</h2><div class="grid sm:grid-cols-3 gap-6"><a href="/learn/signs-car-battery-dying.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">7 Warning Signs Your Battery Is Dying</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a><a href="/learn/how-to-jump-start-car.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">How to Jump Start a Car</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a><a href="/learn/how-long-do-car-batteries-last-florida.html" class="group bg-white rounded-2xl border border-gray-200 p-5 hover:shadow-lg transition-shadow"><h3 class="font-display text-lg text-brand-dark group-hover:text-brand-yellow transition-colors">How Long Do Batteries Last?</h3><p class="text-brand-slate text-sm mt-2">Read our guide</p></a></div></section>
   </main>
 
   <!-- ===== FOOTER ===== -->
@@ -570,13 +570,13 @@
         <div class="sm:col-span-2 lg:col-span-1">
           <a href="/" class="flex items-center gap-2 cursor-pointer" aria-label="Home">
             <svg class="w-7 h-7 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="18" rx="2"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/><path d="M12 10l-2 4h4l-2 4"/></svg>
-            <span class="font-display text-xl text-white tracking-wide">THE BATTERY GUYS</span>
+            <span class="font-display text-xl text-white tracking-tight">THE BATTERY GUYS</span>
           </a>
           <p class="text-white/50 mt-4 text-sm leading-relaxed">South Florida's mobile car battery replacement service. We come to you -- home, office, or roadside. Same-day service, every day.</p>
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">OUR SERVICE</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Our Service</h4>
           <ul class="space-y-2.5">
             <li><a href="/#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Mobile Car Battery Replacement</a></li>
             <li><a href="/#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Truck Battery Installation</a></li>
@@ -588,7 +588,7 @@
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">SERVICE AREAS</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Service Areas</h4>
           <ul class="space-y-2.5">
             <li><a href="/areas/miami-battery-replacement.html" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Battery Replacement Miami</a></li>
             <li><a href="/areas/fort-lauderdale-battery-replacement.html" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Battery Replacement Fort Lauderdale</a></li>
@@ -600,7 +600,7 @@
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">CONTACT</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Contact</h4>
           <ul class="space-y-2.5">
             <li><a href="tel:+18005551234" class="text-brand-yellow font-semibold cursor-pointer">(800) 555-1234</a></li>
             <li><a href="mailto:help@thebatteryguys.com" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">help@thebatteryguys.com</a></li>

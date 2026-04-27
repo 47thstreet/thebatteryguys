@@ -34,8 +34,8 @@
   <!-- Fonts — preconnect + preload critical font files for LCP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -44,21 +44,21 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Bebas Neue"', 'sans-serif'],
-            body: ['"Source Sans 3"', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
           },
           colors: {
             brand: {
               yellow: '#F59E0B',
               'yellow-light': '#FCD34D',
               'yellow-dark': '#D97706',
-              dark: '#0F172A',
-              'dark-mid': '#1E293B',
-              'dark-light': '#334155',
+              dark: '#1C1917',
+              'dark-mid': '#292524',
+              'dark-light': '#44403C',
               red: '#DC2626',
               'red-hover': '#B91C1C',
-              slate: '#64748B',
-              light: '#F8FAFC',
+              slate: '#57534E',
+              light: '#FAFAF9',
               white: '#FFFFFF',
               green: '#16A34A',
             }
@@ -71,9 +71,9 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Source Sans 3', sans-serif; color: #0F172A; background: #F8FAFC; }
-    .font-display { font-family: 'Bebas Neue', sans-serif; }
-    .hero-gradient { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); }
+    body { font-family: 'Inter', sans-serif; color: #1C1917; background: #FAFAF9; }
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg, #1C1917 0%, #292524 60%, #1C1917 100%); }
     .hero-bg { position: relative; }
     .hero-bg::before {
       content: '';
@@ -89,7 +89,7 @@
     }
     .article-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 12px 32px rgba(28, 25, 23, 0.12);
     }
     .article-card img {
       transition: transform 0.3s ease;
@@ -138,7 +138,7 @@
             <line x1="14" y1="1" x2="14" y2="4"></line>
             <path d="M12 10l-2 4h4l-2 4"></path>
           </svg>
-          <span class="font-display text-2xl sm:text-3xl text-white tracking-wide">THE BATTERY GUYS</span>
+          <span class="font-display text-2xl sm:text-3xl text-white tracking-tight">THE BATTERY GUYS</span>
         </a>
 
         <div class="hidden md:flex items-center gap-8">
@@ -186,8 +186,8 @@
         </ol>
       </nav>
 
-      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.95] mb-6 tracking-wide">
-        BATTERY <span class="text-brand-yellow">LEARNING CENTER</span>
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.95] mb-6 tracking-tight">
+        Battery <span class="text-brand-yellow">Learning Center</span>
       </h1>
       <p class="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
         Everything South Florida drivers need to know about car batteries -- from warning signs and replacement costs to Florida-specific heat tips and marine battery guides. Written by our certified mobile technicians.
@@ -213,11 +213,11 @@
         </div>
         <div class="p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
           <div class="flex items-center gap-3 mb-4">
-            <span class="bg-brand-red text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Featured</span>
+            <span class="bg-brand-red text-white text-xs font-bold uppercase tracking-tightr px-3 py-1 rounded-full">Featured</span>
             <span class="text-brand-slate text-sm">8 min read</span>
           </div>
-          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark tracking-wide mb-4 group-hover:text-brand-red transition-colors duration-200">
-            7 WARNING SIGNS YOUR CAR BATTERY IS DYING
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark tracking-tight mb-4 group-hover:text-brand-red transition-colors duration-200">
+            7 Warning Signs Your Car Battery Is Dying
           </h2>
           <p class="text-brand-slate text-lg leading-relaxed mb-6">
             Do not get stranded in the Florida heat. Learn the telltale signs that your car battery is about to fail -- from slow cranking and dimming lights to dashboard warning indicators. Knowing these signs early can save you from an unexpected breakdown.
@@ -233,7 +233,7 @@
 
   <!-- ===== ARTICLE GRID ===== -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-    <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mb-10">ALL ARTICLES</h2>
+    <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mb-10">All Articles</h2>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
@@ -254,8 +254,8 @@
           <div class="flex items-center gap-2 mb-3">
             <span class="text-brand-slate text-xs font-medium">6 min read</span>
           </div>
-          <h3 class="font-display text-xl text-brand-dark tracking-wide mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
-            CAR BATTERY REPLACEMENT COST IN SOUTH FLORIDA (2026)
+          <h3 class="font-display text-xl text-brand-dark tracking-tight mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
+            Car Battery Replacement Cost in South Florida (2026)
           </h3>
           <p class="text-brand-slate text-sm leading-relaxed flex-1">
             A breakdown of what you will actually pay for a car battery replacement in Palm Beach, Broward, and Miami-Dade -- including parts, labor, and mobile service fees.
@@ -284,8 +284,8 @@
           <div class="flex items-center gap-2 mb-3">
             <span class="text-brand-slate text-xs font-medium">5 min read</span>
           </div>
-          <h3 class="font-display text-xl text-brand-dark tracking-wide mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
-            HOW LONG DO CAR BATTERIES LAST IN FLORIDA'S HEAT?
+          <h3 class="font-display text-xl text-brand-dark tracking-tight mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
+            How Long Do Car Batteries Last in Florida's Heat?
           </h3>
           <p class="text-brand-slate text-sm leading-relaxed flex-1">
             Florida heat kills car batteries faster than anywhere else. Learn the real lifespan numbers, what accelerates wear, and how to maximize your battery life in the subtropics.
@@ -314,8 +314,8 @@
           <div class="flex items-center gap-2 mb-3">
             <span class="text-brand-slate text-xs font-medium">7 min read</span>
           </div>
-          <h3 class="font-display text-xl text-brand-dark tracking-wide mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
-            CAR BATTERY VS. ALTERNATOR: HOW TO TELL WHICH ONE FAILED
+          <h3 class="font-display text-xl text-brand-dark tracking-tight mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
+            Car Battery vs. Alternator: How to Tell Which One Failed
           </h3>
           <p class="text-brand-slate text-sm leading-relaxed flex-1">
             Your car will not start -- but is it the battery or the alternator? Learn the simple tests you can do yourself to figure out which component actually failed before calling for service.
@@ -344,8 +344,8 @@
           <div class="flex items-center gap-2 mb-3">
             <span class="text-brand-slate text-xs font-medium">4 min read</span>
           </div>
-          <h3 class="font-display text-xl text-brand-dark tracking-wide mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
-            HOW TO JUMP START A CAR: STEP-BY-STEP GUIDE
+          <h3 class="font-display text-xl text-brand-dark tracking-tight mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
+            How to Jump Start a Car: Step-by-Step Guide
           </h3>
           <p class="text-brand-slate text-sm leading-relaxed flex-1">
             A clear, step-by-step walkthrough for safely jump starting your car with cables or a portable jump starter. Includes safety precautions and what to do if the jump does not work.
@@ -375,8 +375,8 @@
             <span class="bg-brand-red/10 text-brand-red text-xs font-bold px-2 py-0.5 rounded">Popular</span>
             <span class="text-brand-slate text-xs font-medium">8 min read</span>
           </div>
-          <h3 class="font-display text-xl text-brand-dark tracking-wide mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
-            7 WARNING SIGNS YOUR CAR BATTERY IS DYING
+          <h3 class="font-display text-xl text-brand-dark tracking-tight mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
+            7 Warning Signs Your Car Battery Is Dying
           </h3>
           <p class="text-brand-slate text-sm leading-relaxed flex-1">
             Slow cranking, dimming headlights, swollen case -- learn the seven red flags that mean your battery is about to leave you stranded.
@@ -406,8 +406,8 @@
             <span class="bg-brand-yellow/10 text-brand-yellow-dark text-xs font-bold px-2 py-0.5 rounded">New</span>
             <span class="text-brand-slate text-xs font-medium">10 min read</span>
           </div>
-          <h3 class="font-display text-xl text-brand-dark tracking-wide mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
-            BEST CAR BATTERIES FOR FLORIDA HEAT (2026 GUIDE)
+          <h3 class="font-display text-xl text-brand-dark tracking-tight mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
+            Best Car Batteries for Florida Heat (2026 Guide)
           </h3>
           <p class="text-brand-slate text-sm leading-relaxed flex-1">
             The 5 best car batteries rated for Florida's extreme heat -- Optima, Interstate, DieHard, Odyssey, and ACDelco compared by techs who install them daily.
@@ -437,8 +437,8 @@
             <span class="bg-brand-yellow/10 text-brand-yellow-dark text-xs font-bold px-2 py-0.5 rounded">New</span>
             <span class="text-brand-slate text-xs font-medium">8 min read</span>
           </div>
-          <h3 class="font-display text-xl text-brand-dark tracking-wide mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
-            MOBILE VS. AUTO SHOP BATTERY REPLACEMENT
+          <h3 class="font-display text-xl text-brand-dark tracking-tight mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
+            Mobile vs. Auto Shop Battery Replacement
           </h3>
           <p class="text-brand-slate text-sm leading-relaxed flex-1">
             Side-by-side cost comparison of every battery replacement option: auto shop, dealership, DIY, and mobile service. Total cost, time, and convenience ranked.
@@ -456,8 +456,8 @@
   <!-- ===== CTA BANNER ===== -->
   <section class="bg-brand-dark py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-4xl sm:text-5xl text-white tracking-wide mb-4">
-        NEED A BATTERY <span class="text-brand-yellow">NOW?</span>
+      <h2 class="font-display text-4xl sm:text-5xl text-white tracking-tight mb-4">
+        Need a Battery <span class="text-brand-yellow">Now?</span>
       </h2>
       <p class="text-white/70 text-lg mb-3">We Come to You -- Home, Office, or Roadside Across South Florida</p>
       <p class="text-white/50 text-sm mb-8">Palm Beach County, Broward County, and Miami-Dade County. Same-day service, 7 days a week.</p>
@@ -483,13 +483,13 @@
         <div class="sm:col-span-2 lg:col-span-1">
           <a href="/" class="flex items-center gap-2 cursor-pointer" aria-label="Home">
             <svg class="w-7 h-7 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="18" rx="2"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/><path d="M12 10l-2 4h4l-2 4"/></svg>
-            <span class="font-display text-xl text-white tracking-wide">THE BATTERY GUYS</span>
+            <span class="font-display text-xl text-white tracking-tight">THE BATTERY GUYS</span>
           </a>
           <p class="text-white/50 mt-4 text-sm leading-relaxed">South Florida's mobile car battery replacement service. We come to you -- home, office, or roadside. Same-day service, every day.</p>
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">OUR SERVICE</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Our Service</h4>
           <ul class="space-y-2.5">
             <li><a href="/#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Mobile Car Battery Replacement</a></li>
             <li><a href="/#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Truck Battery Installation</a></li>
@@ -501,7 +501,7 @@
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">SERVICE AREAS</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Service Areas</h4>
           <ul class="space-y-2.5">
             <li><a href="/areas/miami-battery-replacement.html" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Battery Replacement Miami</a></li>
             <li><a href="/areas/fort-lauderdale-battery-replacement.html" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Battery Replacement Fort Lauderdale</a></li>
@@ -513,7 +513,7 @@
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">CONTACT</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Contact</h4>
           <ul class="space-y-2.5">
             <li><a href="tel:+18005551234" class="text-brand-yellow font-semibold cursor-pointer">(800) 555-1234</a></li>
             <li><a href="mailto:help@thebatteryguys.com" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">help@thebatteryguys.com</a></li>

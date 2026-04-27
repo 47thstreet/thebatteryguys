@@ -30,7 +30,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -39,21 +39,21 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Bebas Neue"', 'sans-serif'],
-            body: ['"Source Sans 3"', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
           },
           colors: {
             brand: {
               yellow: '#F59E0B',
               'yellow-light': '#FCD34D',
               'yellow-dark': '#D97706',
-              dark: '#0F172A',
-              'dark-mid': '#1E293B',
-              'dark-light': '#334155',
+              dark: '#1C1917',
+              'dark-mid': '#292524',
+              'dark-light': '#44403C',
               red: '#DC2626',
               'red-hover': '#B91C1C',
-              slate: '#64748B',
-              light: '#F8FAFC',
+              slate: '#57534E',
+              light: '#FAFAF9',
               white: '#FFFFFF',
               green: '#16A34A',
             }
@@ -66,8 +66,8 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Source Sans 3', sans-serif; color: #0F172A; background: #F8FAFC; }
-    .font-display { font-family: 'Bebas Neue', sans-serif; }
+    body { font-family: 'Inter', sans-serif; color: #1C1917; background: #FAFAF9; }
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
 
     .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
     .mobile-menu.open { transform: translateX(0); }
@@ -103,7 +103,7 @@
             <line x1="14" y1="1" x2="14" y2="4"></line>
             <path d="M12 10l-2 4h4l-2 4"></path>
           </svg>
-          <span class="font-display text-2xl sm:text-3xl text-white tracking-wide">THE BATTERY GUYS</span>
+          <span class="font-display text-2xl sm:text-3xl text-white tracking-tight">THE BATTERY GUYS</span>
         </a>
 
         <div class="hidden md:flex items-center gap-8">
@@ -178,8 +178,8 @@
         </span>
       </div>
 
-      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark tracking-wide leading-[1.05] mb-5">
-        7 WARNING SIGNS YOUR CAR BATTERY IS DYING
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark tracking-tight leading-[1.05] mb-5">
+        7 Warning Signs Your Car Battery Is Dying
       </h1>
 
       <p class="text-lg sm:text-xl text-brand-slate leading-relaxed max-w-3xl">
@@ -208,7 +208,7 @@
       </p>
 
       <!-- Sign 1 -->
-      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mt-12 mb-4" id="slow-crank">1. SLOW ENGINE CRANK</h2>
+      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mt-12 mb-4" id="slow-crank">1. Slow Engine Crank</h2>
 
       <p>
         <strong>What it sounds like:</strong> You turn the key (or press the start button) and the engine cranks slowly -- that sluggish, labored "rrrr...rrrr...rrrr" sound before it finally catches. It takes noticeably longer to start than usual. Sometimes it barely turns over at all.
@@ -221,7 +221,7 @@
       </p>
 
       <!-- Sign 2 -->
-      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mt-12 mb-4" id="warning-light">2. DASHBOARD BATTERY WARNING LIGHT</h2>
+      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mt-12 mb-4" id="warning-light">2. Dashboard Battery Warning Light</h2>
 
       <p>
         <strong>What it looks like:</strong> A small battery-shaped icon lights up on your dashboard, usually red or amber. Some cars show "BATT" or "CHG" instead. It might flicker on and off, or it might stay on solid.
@@ -237,7 +237,7 @@
       <div class="bg-brand-dark rounded-2xl p-6 sm:p-8 my-10">
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
           <div class="flex-1">
-            <p class="font-display text-2xl text-white tracking-wide mb-1">BATTERY WARNING LIGHT ON?</p>
+            <p class="font-display text-2xl text-white tracking-tight mb-1">Battery Warning Light On?</p>
             <p class="text-white/70 text-sm sm:text-base">We come to you with a free charging system test. If you need a new battery, we install it on the spot.</p>
           </div>
           <a href="tel:+18005551234" class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold px-6 py-3 rounded-xl transition-colors duration-200 cursor-pointer whitespace-nowrap">
@@ -248,7 +248,7 @@
       </div>
 
       <!-- Sign 3 -->
-      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mt-12 mb-4" id="dim-lights">3. DIM HEADLIGHTS AND ELECTRICAL ISSUES</h2>
+      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mt-12 mb-4" id="dim-lights">3. Dim Headlights and Electrical Issues</h2>
 
       <p>
         <strong>What it looks like:</strong> Your headlights seem dimmer than they used to, especially at idle or when you first start the car. Your power windows roll up slower. The infotainment system might glitch, reset, or lose its settings. Interior lights look weak.
@@ -261,7 +261,7 @@
       </p>
 
       <!-- Sign 4 -->
-      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mt-12 mb-4" id="clicking">4. CLICKING SOUND WHEN TURNING THE KEY</h2>
+      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mt-12 mb-4" id="clicking">4. Clicking Sound When Turning the Key</h2>
 
       <p>
         <strong>What it sounds like:</strong> You turn the key and hear a rapid clicking -- "click-click-click-click" -- but the engine does not turn over at all. Or you hear a single loud click followed by nothing. The dashboard lights might dim or go out entirely when you try to start.
@@ -274,7 +274,7 @@
       </p>
 
       <!-- Sign 5 -->
-      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mt-12 mb-4" id="jump-starts">5. NEEDING FREQUENT JUMP STARTS</h2>
+      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mt-12 mb-4" id="jump-starts">5. Needing Frequent Jump Starts</h2>
 
       <p>
         <strong>What it looks like:</strong> You have needed a jump start more than once in the past month. Maybe you keep a portable jump pack in your trunk "just in case." You have started planning your parking around whether you might need a jump.
@@ -287,7 +287,7 @@
       </p>
 
       <!-- Sign 6 -->
-      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mt-12 mb-4" id="swollen-case">6. SWOLLEN OR BLOATED BATTERY CASE</h2>
+      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mt-12 mb-4" id="swollen-case">6. Swollen or Bloated Battery Case</h2>
 
       <p>
         <strong>What it looks like:</strong> Pop the hood and look at your battery. If the sides of the case look swollen, bulging, or warped -- like the plastic is being pushed outward -- that is a serious red flag. The case should have flat, straight sides. Any visible distortion is a problem.
@@ -303,7 +303,7 @@
       <div class="bg-brand-yellow/10 border-2 border-brand-yellow rounded-2xl p-6 sm:p-8 my-10">
         <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
           <div class="flex-1">
-            <p class="font-display text-2xl text-brand-dark tracking-wide mb-1">SOUTH FLORIDA HEAT KILLING YOUR BATTERY?</p>
+            <p class="font-display text-2xl text-brand-dark tracking-tight mb-1">South Florida Heat Killing Your Battery?</p>
             <p class="text-brand-slate text-sm sm:text-base">We serve all of Palm Beach, Broward, and Miami-Dade counties. Same-day mobile replacement -- we come to your location with a new battery and install it on the spot.</p>
           </div>
           <a href="/#quote" class="inline-flex items-center gap-2 bg-brand-yellow hover:bg-brand-yellow-dark text-brand-dark font-bold px-6 py-3 rounded-xl transition-colors duration-200 cursor-pointer whitespace-nowrap">
@@ -314,7 +314,7 @@
       </div>
 
       <!-- Sign 7 -->
-      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mt-12 mb-4" id="battery-age">7. YOUR BATTERY IS 3+ YEARS OLD</h2>
+      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mt-12 mb-4" id="battery-age">7. Your Battery Is 3+ Years Old</h2>
 
       <p>
         <strong>What it looks like:</strong> Check the date sticker on top of your battery. It usually has a month and year code (like "04/23" or a letter-number combo where A=January, B=February, etc., followed by the last digit of the year). If that date is more than three years ago, you are living on borrowed time in South Florida.
@@ -330,7 +330,7 @@
       </p>
 
       <!-- Replace vs. Recharge Section -->
-      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-wide mt-14 mb-6" id="replace-vs-recharge">WHEN TO REPLACE VS. WHEN TO RECHARGE</h2>
+      <h2 class="font-display text-3xl sm:text-4xl text-brand-dark tracking-tight mt-14 mb-6" id="replace-vs-recharge">When to Replace vs. When to Recharge</h2>
 
       <p>
         Not every weak battery needs to be replaced. Sometimes a slow drain has a simple explanation, and a recharge is all you need. Here is how to tell the difference.
@@ -343,7 +343,7 @@
             <div class="w-8 h-8 rounded-full bg-brand-green/10 flex items-center justify-center">
               <svg class="w-4 h-4 text-brand-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </div>
-            <h3 class="font-display text-xl text-brand-dark tracking-wide">A RECHARGE MIGHT FIX IT IF:</h3>
+            <h3 class="font-display text-xl text-brand-dark tracking-tight">A Recharge Might Fix It If:</h3>
           </div>
           <ul class="text-sm sm:text-base text-brand-dark space-y-2">
             <li>You left a dome light or headlights on overnight</li>
@@ -360,7 +360,7 @@
             <div class="w-8 h-8 rounded-full bg-brand-red/10 flex items-center justify-center">
               <svg class="w-4 h-4 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M15 9l-6 6"/><path d="M9 9l6 6"/></svg>
             </div>
-            <h3 class="font-display text-xl text-brand-dark tracking-wide">YOU NEED A REPLACEMENT IF:</h3>
+            <h3 class="font-display text-xl text-brand-dark tracking-tight">You Need a Replacement If:</h3>
           </div>
           <ul class="text-sm sm:text-base text-brand-dark space-y-2">
             <li>The battery is 3+ years old (in South Florida)</li>
@@ -379,7 +379,7 @@
 
       <!-- Final CTA -->
       <div class="bg-brand-dark rounded-2xl p-6 sm:p-8 my-10 text-center">
-        <p class="font-display text-3xl text-white tracking-wide mb-2">DO NOT WAIT UNTIL YOU ARE STRANDED</p>
+        <p class="font-display text-3xl text-white tracking-tight mb-2">Do Not Wait Until You Are Stranded</p>
         <p class="text-white/70 text-base sm:text-lg mb-6 max-w-2xl mx-auto">If you recognized any of these signs, your battery is telling you something. We offer same-day mobile battery replacement across South Florida -- no tow truck, no shop visit.</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="tel:+18005551234" class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer">
@@ -397,7 +397,7 @@
 
     <!-- Related Articles -->
     <section class="mt-16 pt-10 border-t border-gray-200">
-      <h2 class="font-display text-3xl text-brand-dark tracking-wide mb-6">MORE FROM THE LEARNING CENTER</h2>
+      <h2 class="font-display text-3xl text-brand-dark tracking-tight mb-6">More From the Learning Center</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <a href="/learn/how-long-do-car-batteries-last-florida.html" class="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-200 cursor-pointer">
@@ -405,7 +405,7 @@
             <svg class="w-12 h-12 text-brand-yellow/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div class="p-5">
-            <h3 class="font-display text-lg text-brand-dark tracking-wide group-hover:text-brand-yellow transition-colors duration-200">HOW LONG DO CAR BATTERIES LAST IN FLORIDA?</h3>
+            <h3 class="font-display text-lg text-brand-dark tracking-tight group-hover:text-brand-yellow transition-colors duration-200">How Long do Car Batteries Last in Florida?</h3>
             <p class="text-brand-slate text-sm mt-2">Why Florida heat cuts battery life nearly in half, and what you can do about it.</p>
           </div>
         </a>
@@ -415,7 +415,7 @@
             <svg class="w-12 h-12 text-brand-yellow/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
           </div>
           <div class="p-5">
-            <h3 class="font-display text-lg text-brand-dark tracking-wide group-hover:text-brand-yellow transition-colors duration-200">CAR BATTERY REPLACEMENT COST IN SOUTH FLORIDA</h3>
+            <h3 class="font-display text-lg text-brand-dark tracking-tight group-hover:text-brand-yellow transition-colors duration-200">Car Battery Replacement Cost in South Florida</h3>
             <p class="text-brand-slate text-sm mt-2">A full 2026 price breakdown by vehicle type, including hidden costs most drivers miss.</p>
           </div>
         </a>
@@ -425,7 +425,7 @@
             <svg class="w-12 h-12 text-brand-yellow/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="18" rx="2"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/><path d="M12 10l-2 4h4l-2 4"/></svg>
           </div>
           <div class="p-5">
-            <h3 class="font-display text-lg text-brand-dark tracking-wide group-hover:text-brand-yellow transition-colors duration-200">CAR BATTERY VS. ALTERNATOR: HOW TO TELL WHICH ONE FAILED</h3>
+            <h3 class="font-display text-lg text-brand-dark tracking-tight group-hover:text-brand-yellow transition-colors duration-200">Car Battery vs. Alternator: How to Tell Which One Failed</h3>
             <p class="text-brand-slate text-sm mt-2">Simple tests to figure out whether your battery or alternator is the problem.</p>
           </div>
         </a>
@@ -446,13 +446,13 @@
               <line x1="14" y1="1" x2="14" y2="4"></line>
               <path d="M12 10l-2 4h4l-2 4"></path>
             </svg>
-            <span class="font-display text-xl text-white tracking-wide">THE BATTERY GUYS</span>
+            <span class="font-display text-xl text-white tracking-tight">THE BATTERY GUYS</span>
           </a>
           <p class="text-white/50 mt-4 text-sm leading-relaxed">South Florida's mobile car battery replacement service. We come to you -- home, office, or roadside. Same-day service, every day.</p>
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">OUR SERVICE</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Our Service</h4>
           <ul class="space-y-2.5">
             <li><a href="/#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Mobile Car Battery Replacement</a></li>
             <li><a href="/#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Truck Battery Installation</a></li>
@@ -464,7 +464,7 @@
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">SERVICE AREAS</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Service Areas</h4>
           <ul class="space-y-2.5">
             <li><a href="/areas/miami-battery-replacement.html" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Battery Replacement Miami</a></li>
             <li><a href="/areas/fort-lauderdale-battery-replacement.html" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Battery Replacement Fort Lauderdale</a></li>
@@ -476,7 +476,7 @@
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">CONTACT</h4>
+          <h4 class="font-display text-lg text-white tracking-tight mb-4">Contact</h4>
           <ul class="space-y-2.5">
             <li><a href="tel:+18005551234" class="text-brand-yellow font-semibold cursor-pointer">(800) 555-1234</a></li>
             <li><a href="mailto:help@thebatteryguys.com" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">help@thebatteryguys.com</a></li>

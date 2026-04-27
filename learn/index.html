@@ -8,6 +8,9 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='25' y='15' width='50' height='75' rx='8' fill='%23F59E0B'/><rect x='38' y='5' width='8' height='12' rx='2' fill='%23F59E0B'/><rect x='54' y='5' width='8' height='12' rx='2' fill='%23F59E0B'/><path d='M50 40 L44 55 H56 L50 70' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
   <title>Car Battery Learning Center | The Battery Guys | South Florida</title>
   <meta name="description" content="Expert car battery guides for South Florida drivers. Learn about battery replacement costs, warning signs of a dying battery, Florida heat tips, jump starting, marine batteries, and more from The Battery Guys.">
   <meta name="keywords" content="car battery guide, battery replacement cost South Florida, car battery dying signs, how long do car batteries last Florida, jump start car, best car batteries Florida heat, mobile battery replacement, marine battery guide">
@@ -97,6 +100,13 @@
 
     .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
     .mobile-menu.open { transform: translateX(0); }
+
+    /* Focus states (accessibility) */
+    a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -194,6 +204,10 @@
             alt="Car battery with corrosion and warning signs"
             class="w-full h-full object-cover"
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="800"
+            height="500"
           >
         </div>
         <div class="p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
@@ -230,6 +244,9 @@
             alt="Mechanic replacing a car battery"
             class="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
+            width="600"
+            height="375"
           >
         </div>
         <div class="p-5 flex flex-col flex-1">
@@ -257,6 +274,9 @@
             alt="Florida sun and heat over a parking lot"
             class="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
+            width="600"
+            height="375"
           >
         </div>
         <div class="p-5 flex flex-col flex-1">
@@ -284,6 +304,9 @@
             alt="Car engine bay with battery and alternator"
             class="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
+            width="600"
+            height="375"
           >
         </div>
         <div class="p-5 flex flex-col flex-1">
@@ -311,6 +334,9 @@
             alt="Jumper cables connected to a car battery"
             class="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
+            width="600"
+            height="375"
           >
         </div>
         <div class="p-5 flex flex-col flex-1">
@@ -338,6 +364,9 @@
             alt="Close-up of a car battery with corrosion"
             class="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
+            width="600"
+            height="375"
           >
         </div>
         <div class="p-5 flex flex-col flex-1">
@@ -366,6 +395,9 @@
             alt="Car battery being installed in Florida heat"
             class="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
+            width="600"
+            height="375"
           >
         </div>
         <div class="p-5 flex flex-col flex-1">
@@ -394,6 +426,9 @@
             alt="Mobile battery replacement technician working on a car"
             class="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
+            width="600"
+            height="375"
           >
         </div>
         <div class="p-5 flex flex-col flex-1">

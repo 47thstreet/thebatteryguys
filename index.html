@@ -48,7 +48,7 @@
               'dark-light': '#334155',
               red: '#DC2626',
               'red-hover': '#B91C1C',
-              slate: '#64748B',
+              slate: '#475569',
               light: '#F8FAFC',
               white: '#FFFFFF',
               green: '#16A34A',
@@ -62,8 +62,9 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Source Sans 3', sans-serif; color: #0F172A; background: #F8FAFC; }
-    .font-display { font-family: 'Bebas Neue', sans-serif; }
+    body { font-family: 'Source Sans 3', sans-serif; color: #0F172A; background: #F8FAFC; letter-spacing: -0.01em; }
+    .font-display { font-family: 'Bebas Neue', sans-serif; letter-spacing: -0.02em; }
+    h1, h2, h3, h4, h5, h6 { letter-spacing: -0.02em; }
     .hero-gradient { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); }
     .hero-bg { position: relative; }
     .hero-bg::before {
@@ -93,8 +94,8 @@
       z-index: -1;
     }
 
-    .service-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12); }
+    .service-card { transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04); }
+    .service-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04); }
 
     .step-line { position: relative; }
     .step-line::after {
@@ -108,30 +109,43 @@
     }
     .step-line:last-child::after { display: none; }
 
+    /* Apple HIG: Focus states for all interactive elements */
+    a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid #F59E0B;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* Apple HIG: Default transition on interactive elements */
+    a, button { transition: all 0.2s ease-out; }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
       html { scroll-behavior: auto; }
     }
 
-    .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+    .mobile-menu { transform: translateX(100%); transition: transform 0.25s ease-out; }
     .mobile-menu.open { transform: translateX(0); }
 
     /* FAQ accordion */
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.25s ease-out; }
     .faq-answer.open { max-height: 300px; }
+
+    /* Apple HIG: Navbar scroll border */
+    nav.scrolled { border-bottom-color: rgba(255, 255, 255, 0.15); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
   </style>
 </head>
 <body class="antialiased">
 
   <!-- ===== TOPBAR ===== -->
-  <div class="bg-brand-yellow text-brand-dark text-center py-2 px-4 text-sm font-semibold">
+  <div class="bg-brand-yellow text-brand-dark text-center py-2.5 px-4 text-sm font-semibold">
     <span>Same-Day Mobile Car Battery Replacement Across South Florida</span>
     <span class="hidden sm:inline"> &mdash; </span>
     <a href="tel:+18005551234" class="underline cursor-pointer font-bold">Call (800) 555-1234</a>
   </div>
 
   <!-- ===== NAVBAR ===== -->
-  <nav class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/10">
+  <nav class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-xl border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20">
         <a href="#" class="flex items-center gap-2 cursor-pointer" aria-label="The Battery Guys Home">
@@ -145,24 +159,24 @@
         </a>
 
         <div class="hidden md:flex items-center gap-8">
-          <a href="#how-it-works" class="text-white/80 hover:text-brand-yellow transition-colors duration-200 text-sm font-medium cursor-pointer">How It Works</a>
-          <a href="#pricing" class="text-white/80 hover:text-brand-yellow transition-colors duration-200 text-sm font-medium cursor-pointer">Pricing</a>
-          <a href="#areas" class="text-white/80 hover:text-brand-yellow transition-colors duration-200 text-sm font-medium cursor-pointer">Service Areas</a>
-          <a href="#faq" class="text-white/80 hover:text-brand-yellow transition-colors duration-200 text-sm font-medium cursor-pointer">FAQ</a>
-          <a href="tel:+18005551234" class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-semibold px-5 py-2.5 rounded-lg transition-colors duration-200 cursor-pointer">
+          <a href="#how-it-works" class="text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">How It Works</a>
+          <a href="#pricing" class="text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">Pricing</a>
+          <a href="#areas" class="text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">Service Areas</a>
+          <a href="#faq" class="text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">FAQ</a>
+          <a href="tel:+18005551234" class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-semibold px-5 py-3 rounded-lg transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             (800) 555-1234
           </a>
         </div>
 
-        <button id="mobileMenuBtn" class="md:hidden text-white p-2 cursor-pointer" aria-label="Open menu" aria-expanded="false">
+        <button id="mobileMenuBtn" class="md:hidden text-white p-2.5 cursor-pointer" aria-label="Open menu" aria-expanded="false">
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
     </div>
 
     <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-brand-dark z-50 p-6 flex flex-col gap-6 md:hidden" role="dialog" aria-label="Navigation">
-      <button id="mobileMenuClose" class="self-end text-white p-2 cursor-pointer" aria-label="Close menu">
+      <button id="mobileMenuClose" class="self-end text-white p-2.5 cursor-pointer" aria-label="Close menu">
         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
       <a href="#how-it-works" class="text-white text-lg font-medium cursor-pointer mobile-link">How It Works</a>
@@ -202,11 +216,11 @@
 
           <!-- Dual CTA -->
           <div class="flex flex-col sm:flex-row gap-4 mb-10">
-            <a href="tel:+18005551234" class="pulse-ring relative inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer">
+            <a href="tel:+18005551234" class="pulse-ring relative inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer">
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               Call (800) 555-1234
             </a>
-            <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-yellow hover:bg-brand-yellow-dark text-brand-dark font-bold text-lg px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer">
+            <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-yellow hover:bg-brand-yellow-dark text-brand-dark font-bold text-lg px-8 py-4 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer">
               Get a Free Quote
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
             </a>
@@ -232,7 +246,7 @@
         </div>
 
         <!-- Right: Quote Form -->
-        <div id="quote" class="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/20 border border-white/10">
+        <div id="quote" class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg shadow-black/10 border border-gray-100">
           <h2 class="font-display text-3xl text-brand-dark tracking-wide text-center mb-1">GET YOUR FREE QUOTE</h2>
           <p class="text-brand-slate text-center text-sm mb-6">We'll text you a price in minutes</p>
 
@@ -276,7 +290,7 @@
               <label for="q-phone" class="block text-sm font-medium text-brand-dark mb-1.5">Phone Number</label>
               <input type="tel" id="q-phone" name="phone" required placeholder="(555) 123-4567" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-brand-light text-brand-dark placeholder-brand-slate/50 focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent">
             </div>
-            <button type="submit" class="w-full bg-brand-red hover:bg-brand-red-hover text-white font-bold py-4 rounded-xl transition-colors duration-200 cursor-pointer text-lg mt-2">
+            <button type="submit" class="w-full bg-brand-red hover:bg-brand-red-hover text-white font-bold py-4 rounded-xl transition-all duration-200 ease-out hover:scale-[1.01] cursor-pointer text-lg mt-2">
               Get My Free Quote
             </button>
             <p class="text-brand-slate text-xs text-center">No obligation. We'll send a price and can schedule same-day.</p>
@@ -410,7 +424,7 @@
       </div>
 
       <div class="text-center mt-14">
-        <a href="tel:+18005551234" class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer">
+        <a href="tel:+18005551234" class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           Get Your Battery Replaced Now
         </a>
@@ -476,7 +490,7 @@
             </div>
           </div>
 
-          <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer mt-8">
+          <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer mt-8">
             Get Your Free Quote
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
@@ -495,7 +509,7 @@
       </div>
 
       <div class="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <div class="bg-white rounded-2xl p-8 border border-gray-100 text-center">
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 text-center shadow-sm hover:shadow-md transition-all duration-200 ease-out">
           <h3 class="font-display text-xl text-brand-slate tracking-wide mb-2">STANDARD</h3>
           <p class="text-brand-slate text-sm mb-4">Sedans, compacts, most cars</p>
           <div class="mb-4">
@@ -508,10 +522,10 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Charging system test</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>3-year warranty</li>
           </ul>
-          <a href="#quote" class="block w-full bg-brand-dark hover:bg-brand-dark-light text-white font-semibold py-3 rounded-xl transition-colors duration-200 cursor-pointer text-center">Get Quote</a>
+          <a href="#quote" class="block w-full bg-brand-dark hover:bg-brand-dark-light text-white font-semibold py-3 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer text-center">Get Quote</a>
         </div>
 
-        <div class="bg-brand-dark rounded-2xl p-8 text-center relative ring-2 ring-brand-yellow">
+        <div class="bg-brand-dark rounded-2xl p-8 text-center relative ring-2 ring-brand-yellow shadow-sm hover:shadow-md transition-all duration-200 ease-out">
           <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-yellow text-brand-dark text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
           <h3 class="font-display text-xl text-brand-yellow tracking-wide mb-2">PREMIUM</h3>
           <p class="text-white/60 text-sm mb-4">SUVs, trucks, European vehicles</p>
@@ -525,10 +539,10 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Full electrical system check</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>4-year warranty</li>
           </ul>
-          <a href="#quote" class="block w-full bg-brand-yellow hover:bg-brand-yellow-dark text-brand-dark font-bold py-3 rounded-xl transition-colors duration-200 cursor-pointer text-center">Get Quote</a>
+          <a href="#quote" class="block w-full bg-brand-yellow hover:bg-brand-yellow-dark text-brand-dark font-bold py-3 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer text-center">Get Quote</a>
         </div>
 
-        <div class="bg-white rounded-2xl p-8 border border-gray-100 text-center">
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 text-center shadow-sm hover:shadow-md transition-all duration-200 ease-out">
           <h3 class="font-display text-xl text-brand-slate tracking-wide mb-2">FLEET & MARINE</h3>
           <p class="text-brand-slate text-sm mb-4">Fleets, boats, RVs, jet skis</p>
           <div class="mb-4">
@@ -543,7 +557,7 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Dedicated account manager</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Net-30 invoicing</li>
           </ul>
-          <a href="tel:+18005551234" class="block w-full bg-brand-dark hover:bg-brand-dark-light text-white font-semibold py-3 rounded-xl transition-colors duration-200 cursor-pointer text-center">Call Us</a>
+          <a href="tel:+18005551234" class="block w-full bg-brand-dark hover:bg-brand-dark-light text-white font-semibold py-3 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer text-center">Call Us</a>
         </div>
       </div>
 
@@ -704,52 +718,52 @@
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Miami</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Miami</h3>
           <p class="text-brand-slate text-sm">Miami-Dade County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Fort Lauderdale</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Fort Lauderdale</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">West Palm Beach</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">West Palm Beach</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Boca Raton</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Boca Raton</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Pompano Beach</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Pompano Beach</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Hollywood</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Hollywood</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Coral Springs</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Coral Springs</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Hialeah</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Hialeah</h3>
           <p class="text-brand-slate text-sm">Miami-Dade County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Homestead</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Homestead</h3>
           <p class="text-brand-slate text-sm">Miami-Dade County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Delray Beach</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Delray Beach</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Deerfield Beach</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Deerfield Beach</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Boynton Beach</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Boynton Beach</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
       </div>
@@ -839,11 +853,11 @@
       <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white tracking-wide">DEAD BATTERY? WE'RE ON OUR WAY.</h2>
       <p class="text-white/80 mt-4 text-lg max-w-xl mx-auto">Call now for same-day mobile car battery replacement across South Florida. Upfront price, no hidden fees, installed at your location.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-        <a href="tel:+18005551234" class="inline-flex items-center justify-center gap-3 bg-white text-brand-red hover:bg-gray-100 font-bold text-xl px-10 py-5 rounded-xl transition-colors duration-200 cursor-pointer">
+        <a href="tel:+18005551234" class="inline-flex items-center justify-center gap-3 bg-white text-brand-red hover:bg-gray-50 font-bold text-xl px-10 py-5 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer">
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           (800) 555-1234
         </a>
-        <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-lg px-8 py-5 rounded-xl border border-white/30 transition-colors duration-200 cursor-pointer">
+        <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-lg px-8 py-5 rounded-xl border border-white/30 transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer">
           Get a Free Quote Online
         </a>
       </div>
@@ -866,13 +880,13 @@
         <div>
           <h4 class="font-display text-lg text-white tracking-wide mb-4">OUR SERVICE</h4>
           <ul class="space-y-2.5">
-            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Mobile Car Battery Replacement</a></li>
-            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Truck Battery Installation</a></li>
-            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">RV & Motorhome Batteries</a></li>
-            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Motorcycle Batteries</a></li>
-            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Marine & Boat Batteries</a></li>
-            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Jet Ski / PWC Batteries</a></li>
-            <li><a href="#pricing" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Fleet Battery Service</a></li>
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">Mobile Car Battery Replacement</a></li>
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">Truck Battery Installation</a></li>
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">RV & Motorhome Batteries</a></li>
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">Motorcycle Batteries</a></li>
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">Marine & Boat Batteries</a></li>
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">Jet Ski / PWC Batteries</a></li>
+            <li><a href="#pricing" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">Fleet Battery Service</a></li>
           </ul>
         </div>
 
@@ -893,7 +907,7 @@
           <h4 class="font-display text-lg text-white tracking-wide mb-4">CONTACT</h4>
           <ul class="space-y-2.5">
             <li><a href="tel:+18005551234" class="text-brand-yellow font-semibold cursor-pointer">(800) 555-1234</a></li>
-            <li><a href="mailto:help@thebatteryguys.com" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">help@thebatteryguys.com</a></li>
+            <li><a href="mailto:help@thebatteryguys.com" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">help@thebatteryguys.com</a></li>
             <li><span class="text-white/50 text-sm">24/7/365 Service</span></li>
             <li><span class="text-white/50 text-sm">Licensed & Insured</span></li>
           </ul>
@@ -903,15 +917,15 @@
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
         <p class="text-white/30 text-sm">&copy; 2026 The Battery Guys. Mobile Car Battery Replacement in South Florida. All rights reserved.</p>
         <div class="flex gap-6">
-          <a href="#" class="text-white/30 hover:text-white/60 text-sm transition-colors duration-200 cursor-pointer">Privacy Policy</a>
-          <a href="#" class="text-white/30 hover:text-white/60 text-sm transition-colors duration-200 cursor-pointer">Terms of Service</a>
+          <a href="#" class="text-white/30 hover:text-white/60 text-sm transition-all duration-200 ease-out cursor-pointer">Privacy Policy</a>
+          <a href="#" class="text-white/30 hover:text-white/60 text-sm transition-all duration-200 ease-out cursor-pointer">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- ===== FLOATING MOBILE CTA ===== -->
-  <div class="fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/95 backdrop-blur-sm border-t border-white/10 p-3 sm:hidden">
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/90 backdrop-blur-xl border-t border-white/10 p-3 sm:hidden">
     <div class="flex gap-2">
       <a href="tel:+18005551234" class="flex-1 flex items-center justify-center gap-2 bg-brand-red text-white font-bold py-3.5 rounded-xl cursor-pointer">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -959,7 +973,7 @@
 
     // Navbar scroll
     const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => { nav.classList.toggle('shadow-lg', window.scrollY > 20); });
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
   </script>
 
   <!-- ===== STRUCTURED DATA ===== -->

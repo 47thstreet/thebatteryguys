@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Security headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <title>Car Battery Learning Center | The Battery Guys | South Florida</title>
   <meta name="description" content="Expert car battery guides for South Florida drivers. Learn about battery replacement costs, warning signs of a dying battery, Florida heat tips, jump starting, marine batteries, and more from The Battery Guys.">
   <meta name="keywords" content="car battery guide, battery replacement cost South Florida, car battery dying signs, how long do car batteries last Florida, jump start car, best car batteries Florida heat, mobile battery replacement, marine battery guide">
@@ -23,9 +28,10 @@
   <meta name="twitter:title" content="Car Battery Learning Center | The Battery Guys">
   <meta name="twitter:description" content="Expert battery guides for South Florida drivers. Costs, warning signs, Florida heat tips, and more.">
 
-  <!-- Fonts -->
+  <!-- Fonts — preconnect + preload critical font files for LCP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind via CDN -->
@@ -100,6 +106,9 @@
 </head>
 <body class="antialiased">
 
+  <!-- Skip to main content (accessibility) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-brand-yellow focus:text-brand-dark focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold focus:text-sm">Skip to main content</a>
+
   <!-- ===== TOPBAR ===== -->
   <div class="bg-brand-yellow text-brand-dark text-center py-2 px-4 text-sm font-semibold">
     <span>Same-Day Mobile Car Battery Replacement Across South Florida</span>
@@ -154,6 +163,7 @@
   </nav>
 
   <!-- ===== HERO ===== -->
+  <main id="main-content">
   <section class="hero-gradient hero-bg py-16 sm:py-24 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       <!-- Breadcrumb -->
@@ -348,6 +358,62 @@
         </div>
       </a>
 
+      <!-- Card 6: Best Car Batteries for Florida Heat -->
+      <a href="/learn/best-car-batteries-florida-heat.html" class="article-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer group flex flex-col">
+        <div class="aspect-[16/10] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80"
+            alt="Car battery being installed in Florida heat"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          >
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="bg-brand-yellow/10 text-brand-yellow-dark text-xs font-bold px-2 py-0.5 rounded">New</span>
+            <span class="text-brand-slate text-xs font-medium">10 min read</span>
+          </div>
+          <h3 class="font-display text-xl text-brand-dark tracking-wide mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
+            BEST CAR BATTERIES FOR FLORIDA HEAT (2026 GUIDE)
+          </h3>
+          <p class="text-brand-slate text-sm leading-relaxed flex-1">
+            The 5 best car batteries rated for Florida's extreme heat -- Optima, Interstate, DieHard, Odyssey, and ACDelco compared by techs who install them daily.
+          </p>
+          <span class="mt-4 inline-flex items-center gap-1 text-brand-red text-sm font-semibold group-hover:gap-2 transition-all duration-200">
+            Read More
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card 7: Mobile vs Auto Shop -->
+      <a href="/learn/mobile-vs-auto-shop-battery-replacement.html" class="article-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer group flex flex-col">
+        <div class="aspect-[16/10] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80"
+            alt="Mobile battery replacement technician working on a car"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          >
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="bg-brand-yellow/10 text-brand-yellow-dark text-xs font-bold px-2 py-0.5 rounded">New</span>
+            <span class="text-brand-slate text-xs font-medium">8 min read</span>
+          </div>
+          <h3 class="font-display text-xl text-brand-dark tracking-wide mb-2 group-hover:text-brand-red transition-colors duration-200 leading-tight">
+            MOBILE VS. AUTO SHOP BATTERY REPLACEMENT
+          </h3>
+          <p class="text-brand-slate text-sm leading-relaxed flex-1">
+            Side-by-side cost comparison of every battery replacement option: auto shop, dealership, DIY, and mobile service. Total cost, time, and convenience ranked.
+          </p>
+          <span class="mt-4 inline-flex items-center gap-1 text-brand-red text-sm font-semibold group-hover:gap-2 transition-all duration-200">
+            Read More
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
     </div>
   </section>
 
@@ -371,6 +437,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="bg-brand-dark pt-16 pb-24 sm:pb-8">
@@ -467,7 +535,7 @@
     "@type": "ItemList",
     "name": "Car Battery Learning Center",
     "description": "Expert car battery guides for South Florida drivers from The Battery Guys.",
-    "numberOfItems": 5,
+    "numberOfItems": 7,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -498,6 +566,18 @@
         "position": 5,
         "url": "https://thebatteryguys.com/learn/how-to-jump-start-car.html",
         "name": "How to Jump Start a Car: Step-by-Step Guide"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "url": "https://thebatteryguys.com/learn/best-car-batteries-florida-heat.html",
+        "name": "Best Car Batteries for Florida Heat (2026 Guide)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "url": "https://thebatteryguys.com/learn/mobile-vs-auto-shop-battery-replacement.html",
+        "name": "Mobile Battery Replacement vs. Auto Shop: Which Saves You More?"
       }
     ]
   }

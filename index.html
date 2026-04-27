@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Security headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <!-- Google Analytics — replace G-XXXXXXXXXX with your Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
@@ -31,9 +35,10 @@
   <meta name="twitter:title" content="The Battery Guys | Mobile Car Battery Replacement">
   <meta name="twitter:description" content="Dead battery? We come to you. Same-day mobile car battery replacement across South Florida -- Palm Beach, Broward, and Miami-Dade.">
 
-  <!-- Fonts -->
+  <!-- Fonts — preconnect + preload critical font files for LCP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind via CDN -->
@@ -167,6 +172,9 @@
 </head>
 <body class="antialiased">
 
+  <!-- Skip to main content (accessibility) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-brand-yellow focus:text-brand-dark focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold focus:text-sm">Skip to main content</a>
+
   <!-- ===== TOPBAR ===== -->
   <div class="bg-brand-yellow text-brand-dark text-center py-2.5 px-4 text-sm font-semibold">
     <span>Same-Day Mobile Car Battery Replacement Across South Florida</span>
@@ -221,6 +229,7 @@
   </nav>
 
   <!-- ===== HERO ===== -->
+  <main id="main-content">
   <section class="hero-gradient pt-16 sm:pt-20 pb-20 sm:pb-28 relative overflow-hidden">
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
@@ -418,16 +427,16 @@
   <section class="bg-white py-0 overflow-hidden">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-0">
       <div class="aspect-[4/3] overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=600&q=80" alt="Mechanic testing car battery with multimeter" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" onload="this.classList.add('loaded')">
+        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=600&q=80" alt="Mechanic testing car battery with multimeter" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="600" height="450" onload="this.classList.add('loaded')">
       </div>
       <div class="aspect-[4/3] overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Car battery being installed under the hood" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" onload="this.classList.add('loaded')">
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Car battery being installed under the hood" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="600" height="450" onload="this.classList.add('loaded')">
       </div>
       <div class="aspect-[4/3] overflow-hidden hidden md:block">
-        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80" alt="Professional mobile service van on Florida road" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" onload="this.classList.add('loaded')">
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80" alt="Professional mobile service van on Florida road" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="600" height="450" onload="this.classList.add('loaded')">
       </div>
       <div class="aspect-[4/3] overflow-hidden hidden md:block">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=600&q=80" alt="Technician working on car engine in driveway" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" onload="this.classList.add('loaded')">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=600&q=80" alt="Technician working on car engine in driveway" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="600" height="450" onload="this.classList.add('loaded')">
       </div>
     </div>
   </section>
@@ -496,11 +505,11 @@
         <!-- Image grid -->
         <div class="grid grid-cols-2 gap-4">
           <div class="rounded-2xl overflow-hidden aspect-[3/4]">
-            <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=600&q=80" alt="Professional automotive technician with tools" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" onload="this.classList.add('loaded')">
+            <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=600&q=80" alt="Professional automotive technician with tools" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="600" height="800" onload="this.classList.add('loaded')">
           </div>
           <div class="grid gap-4">
             <div class="rounded-2xl overflow-hidden aspect-square">
-              <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="Clean modern car with open hood ready for battery service" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" onload="this.classList.add('loaded')">
+              <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="Clean modern car with open hood ready for battery service" class="img-cover img-reveal hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="600" height="600" onload="this.classList.add('loaded')">
             </div>
             <div class="rounded-2xl overflow-hidden aspect-square bg-brand-yellow flex items-center justify-center p-6">
               <div class="text-center">
@@ -717,7 +726,7 @@
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
         <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
-          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=400&q=80" alt="Car battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
+          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=400&q=80" alt="Car battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="400" height="400" onload="this.classList.add('loaded')">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
             <h3 class="font-display text-lg font-bold text-white">Cars</h3>
@@ -726,7 +735,7 @@
         </div>
 
         <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
-          <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=400&q=80" alt="Truck battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
+          <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=400&q=80" alt="Truck battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="400" height="400" onload="this.classList.add('loaded')">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
             <h3 class="font-display text-lg font-bold text-white">Trucks</h3>
@@ -735,7 +744,7 @@
         </div>
 
         <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
-          <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=400&q=80" alt="RV battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
+          <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=400&q=80" alt="RV battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="400" height="400" onload="this.classList.add('loaded')">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
             <h3 class="font-display text-lg font-bold text-white">RVs</h3>
@@ -744,7 +753,7 @@
         </div>
 
         <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
-          <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=400&q=80" alt="Motorhome battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
+          <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=400&q=80" alt="Motorhome battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="400" height="400" onload="this.classList.add('loaded')">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
             <h3 class="font-display text-lg font-bold text-white">Motorhomes</h3>
@@ -753,7 +762,7 @@
         </div>
 
         <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
-          <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=400&q=80" alt="Motorcycle battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
+          <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=400&q=80" alt="Motorcycle battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="400" height="400" onload="this.classList.add('loaded')">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
             <h3 class="font-display text-lg font-bold text-white">Motorcycles</h3>
@@ -762,7 +771,7 @@
         </div>
 
         <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
-          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Boat battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Boat battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="400" height="400" onload="this.classList.add('loaded')">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
             <h3 class="font-display text-lg font-bold text-white">Boats</h3>
@@ -771,7 +780,7 @@
         </div>
 
         <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
-          <img src="https://images.unsplash.com/photo-1626447857058-2ba6a8868cb5?auto=format&fit=crop&w=400&q=80" alt="Jet ski battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
+          <img src="https://images.unsplash.com/photo-1626447857058-2ba6a8868cb5?auto=format&fit=crop&w=400&q=80" alt="Jet ski battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" width="400" height="400" onload="this.classList.add('loaded')">
           <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
             <h3 class="font-display text-lg font-bold text-white">Jet Skis</h3>
@@ -809,51 +818,51 @@
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/miami-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Miami</h3>
           <p class="text-brand-slate text-sm">Miami-Dade County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/fort-lauderdale-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Fort Lauderdale</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/west-palm-beach-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">West Palm Beach</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/boca-raton-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Boca Raton</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/pompano-beach-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Pompano Beach</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/hollywood-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Hollywood</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/coral-springs-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Coral Springs</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/hialeah-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Hialeah</h3>
           <p class="text-brand-slate text-sm">Miami-Dade County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/homestead-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Homestead</h3>
           <p class="text-brand-slate text-sm">Miami-Dade County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/delray-beach-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Delray Beach</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/deerfield-beach-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Deerfield Beach</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+        <a href="/areas/boynton-beach-battery-replacement.html" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
           <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Boynton Beach</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
@@ -957,7 +966,7 @@
   <!-- ===== FINAL CTA ===== -->
   <section class="py-20 sm:py-24 bg-brand-red relative overflow-hidden">
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80" alt="" class="img-cover opacity-10" loading="lazy" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80" alt="" class="img-cover opacity-10" loading="lazy" decoding="async" width="1920" height="1080" aria-hidden="true">
     </div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white font-bold">Dead Battery? We're on Our Way.</h2>
@@ -973,6 +982,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="bg-[#1C1917] pt-16 pb-24 sm:pb-8">

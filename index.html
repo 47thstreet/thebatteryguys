@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Battery Guys | Mobile Car Battery Replacement in Florida | We Come to You</title>
+  <meta name="description" content="Dead car battery? The Battery Guys replace your car battery at your location in Florida. Mobile battery replacement at your home, office, or roadside. Same-day service. Call (800) 555-1234.">
+  <meta name="keywords" content="mobile car battery replacement, car battery replacement near me, mobile battery service Florida, car battery change at home, dead car battery help, battery replacement service, car battery installation, same day battery replacement, car battery delivery and install">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thebatteryguys.com">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Battery Guys | Mobile Car Battery Replacement | We Come to You">
+  <meta property="og:description" content="Dead battery? We come to you. Mobile car battery replacement anywhere in Florida. Same-day service, upfront pricing, installed on the spot.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thebatteryguys.com">
+  <meta property="og:image" content="https://thebatteryguys.com/assets/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="The Battery Guys">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Battery Guys | Mobile Car Battery Replacement">
+  <meta name="twitter:description" content="Dead battery? We come to you. Same-day mobile car battery replacement anywhere in Florida.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            body: ['"Source Sans 3"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              yellow: '#F59E0B',
+              'yellow-light': '#FCD34D',
+              'yellow-dark': '#D97706',
+              dark: '#0F172A',
+              'dark-mid': '#1E293B',
+              'dark-light': '#334155',
+              red: '#DC2626',
+              'red-hover': '#B91C1C',
+              slate: '#64748B',
+              light: '#F8FAFC',
+              white: '#FFFFFF',
+              green: '#16A34A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Source Sans 3', sans-serif; color: #0F172A; background: #F8FAFC; }
+    .font-display { font-family: 'Bebas Neue', sans-serif; }
+    .hero-gradient { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.35); opacity: 0; }
+    }
+    .pulse-ring { position: relative; }
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 12px;
+      background: #DC2626;
+      animation: pulse-ring 2s ease-out infinite;
+      z-index: -1;
+    }
+
+    .service-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12); }
+
+    .step-line { position: relative; }
+    .step-line::after {
+      content: '';
+      position: absolute;
+      top: 48px;
+      left: 24px;
+      width: 2px;
+      height: calc(100% - 48px);
+      background: #E2E8F0;
+    }
+    .step-line:last-child::after { display: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      html { scroll-behavior: auto; }
+    }
+
+    .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+    .mobile-menu.open { transform: translateX(0); }
+
+    /* FAQ accordion */
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-answer.open { max-height: 300px; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- ===== TOPBAR ===== -->
+  <div class="bg-brand-yellow text-brand-dark text-center py-2 px-4 text-sm font-semibold">
+    <span>Same-Day Mobile Car Battery Replacement Across Florida</span>
+    <span class="hidden sm:inline"> &mdash; </span>
+    <a href="tel:+18005551234" class="underline cursor-pointer font-bold">Call (800) 555-1234</a>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-sm border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <a href="#" class="flex items-center gap-2 cursor-pointer" aria-label="The Battery Guys Home">
+          <svg class="w-8 h-8 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="6" y="4" width="12" height="18" rx="2"></rect>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+            <path d="M12 10l-2 4h4l-2 4"></path>
+          </svg>
+          <span class="font-display text-2xl sm:text-3xl text-white tracking-wide">THE BATTERY GUYS</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#how-it-works" class="text-white/80 hover:text-brand-yellow transition-colors duration-200 text-sm font-medium cursor-pointer">How It Works</a>
+          <a href="#pricing" class="text-white/80 hover:text-brand-yellow transition-colors duration-200 text-sm font-medium cursor-pointer">Pricing</a>
+          <a href="#areas" class="text-white/80 hover:text-brand-yellow transition-colors duration-200 text-sm font-medium cursor-pointer">Service Areas</a>
+          <a href="#faq" class="text-white/80 hover:text-brand-yellow transition-colors duration-200 text-sm font-medium cursor-pointer">FAQ</a>
+          <a href="tel:+18005551234" class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-semibold px-5 py-2.5 rounded-lg transition-colors duration-200 cursor-pointer">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (800) 555-1234
+          </a>
+        </div>
+
+        <button id="mobileMenuBtn" class="md:hidden text-white p-2 cursor-pointer" aria-label="Open menu" aria-expanded="false">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-brand-dark z-50 p-6 flex flex-col gap-6 md:hidden" role="dialog" aria-label="Navigation">
+      <button id="mobileMenuClose" class="self-end text-white p-2 cursor-pointer" aria-label="Close menu">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <a href="#how-it-works" class="text-white text-lg font-medium cursor-pointer mobile-link">How It Works</a>
+      <a href="#pricing" class="text-white text-lg font-medium cursor-pointer mobile-link">Pricing</a>
+      <a href="#areas" class="text-white text-lg font-medium cursor-pointer mobile-link">Service Areas</a>
+      <a href="#faq" class="text-white text-lg font-medium cursor-pointer mobile-link">FAQ</a>
+      <a href="tel:+18005551234" class="mt-4 flex items-center justify-center gap-2 bg-brand-red text-white font-semibold px-5 py-3 rounded-lg cursor-pointer">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-gradient pt-16 sm:pt-20 pb-20 sm:pb-28 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]">
+      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#grid)"/>
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left: Copy -->
+        <div>
+          <div class="inline-flex items-center gap-2 bg-brand-green/10 border border-brand-green/30 rounded-full px-4 py-1.5 mb-6">
+            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+            <span class="text-green-300 text-sm font-medium">Technicians Available Now</span>
+          </div>
+
+          <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white leading-[0.95] mb-6 tracking-wide">
+            MOBILE CAR<br>
+            BATTERY<br>
+            <span class="text-brand-yellow">REPLACEMENT</span>
+          </h1>
+
+          <p class="text-white/70 text-lg sm:text-xl max-w-lg mb-4 leading-relaxed">
+            <strong class="text-white">We come to you.</strong> Dead battery at home, work, or on the road? Our certified techs bring a fresh battery and install it on the spot. No tow truck. No shop visit. No hassle.
+          </p>
+
+          <p class="text-brand-yellow font-semibold text-lg mb-8">Same-day service &bull; Upfront pricing &bull; All makes & models</p>
+
+          <!-- Dual CTA -->
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="tel:+18005551234" class="pulse-ring relative inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Call (800) 555-1234
+            </a>
+            <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-yellow hover:bg-brand-yellow-dark text-brand-dark font-bold text-lg px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer">
+              Get a Free Quote
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+
+          <!-- Trust bar -->
+          <div class="flex flex-wrap items-center gap-6 text-white/50 text-sm">
+            <div class="flex items-center gap-1.5">
+              <div class="flex gap-0.5">
+                <svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span>4.9/5 (2,400+ reviews)</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Licensed & Insured</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Quote Form -->
+        <div id="quote" class="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/20 border border-white/10">
+          <h2 class="font-display text-3xl text-brand-dark tracking-wide text-center mb-1">GET YOUR FREE QUOTE</h2>
+          <p class="text-brand-slate text-center text-sm mb-6">We'll text you a price in minutes</p>
+
+          <form action="#" method="POST" class="space-y-4">
+            <div>
+              <label for="q-year" class="block text-sm font-medium text-brand-dark mb-1.5">Vehicle Year</label>
+              <select id="q-year" name="year" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-brand-light text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent cursor-pointer">
+                <option value="">Select Year</option>
+                <script>for(let y=2026;y>=2000;y--) document.write(`<option value="${y}">${y}</option>`)</script>
+                <option value="older">1999 or older</option>
+              </select>
+            </div>
+            <div>
+              <label for="q-make" class="block text-sm font-medium text-brand-dark mb-1.5">Vehicle Make</label>
+              <select id="q-make" name="make" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-brand-light text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent cursor-pointer">
+                <option value="">Select Make</option>
+                <option>Acura</option><option>Audi</option><option>BMW</option><option>Buick</option><option>Cadillac</option><option>Chevrolet</option><option>Chrysler</option><option>Dodge</option><option>Ford</option><option>GMC</option><option>Honda</option><option>Hyundai</option><option>Infiniti</option><option>Jeep</option><option>Kia</option><option>Lexus</option><option>Lincoln</option><option>Mazda</option><option>Mercedes-Benz</option><option>Nissan</option><option>Ram</option><option>Subaru</option><option>Tesla</option><option>Toyota</option><option>Volkswagen</option><option>Volvo</option><option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="q-zip" class="block text-sm font-medium text-brand-dark mb-1.5">Your Zip Code</label>
+              <input type="text" id="q-zip" name="zip" required placeholder="e.g. 33101" pattern="[0-9]{5}" maxlength="5" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-brand-light text-brand-dark placeholder-brand-slate/50 focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent">
+            </div>
+            <div>
+              <label for="q-phone" class="block text-sm font-medium text-brand-dark mb-1.5">Phone Number</label>
+              <input type="tel" id="q-phone" name="phone" required placeholder="(555) 123-4567" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-brand-light text-brand-dark placeholder-brand-slate/50 focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent">
+            </div>
+            <button type="submit" class="w-full bg-brand-red hover:bg-brand-red-hover text-white font-bold py-4 rounded-xl transition-colors duration-200 cursor-pointer text-lg mt-2">
+              Get My Free Quote
+            </button>
+            <p class="text-brand-slate text-xs text-center">No obligation. We'll send a price and can schedule same-day.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOCIAL PROOF BAR ===== -->
+  <section class="bg-white border-b border-gray-100 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+        <div>
+          <span class="font-display text-4xl text-brand-dark">50K+</span>
+          <p class="text-brand-slate text-sm mt-1">Batteries Replaced</p>
+        </div>
+        <div>
+          <span class="font-display text-4xl text-brand-dark">4.9</span>
+          <p class="text-brand-slate text-sm mt-1">Average Rating</p>
+        </div>
+        <div>
+          <span class="font-display text-4xl text-brand-dark">45<span class="text-2xl">min</span></span>
+          <p class="text-brand-slate text-sm mt-1">Avg. Arrival Time</p>
+        </div>
+        <div>
+          <span class="font-display text-4xl text-brand-dark">24/7</span>
+          <p class="text-brand-slate text-sm mt-1">Always Available</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM / SOLUTION ===== -->
+  <section class="py-20 sm:py-28 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Skip the Shop</span>
+        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">WHY WAIT AT AN AUTO SHOP?</h2>
+        <p class="text-brand-slate mt-4 max-w-2xl mx-auto text-lg">A dead car battery shouldn't ruin your day. We bring the battery to you and install it wherever your car is parked.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 cursor-default">
+          <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <h3 class="font-semibold text-brand-dark text-lg mb-2">No Tow Truck Needed</h3>
+          <p class="text-brand-slate leading-relaxed">Don't pay $100+ for a tow to a shop. We drive to your location with the right battery already on our truck.</p>
+        </div>
+
+        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 cursor-default">
+          <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <h3 class="font-semibold text-brand-dark text-lg mb-2">No Sitting in a Waiting Room</h3>
+          <p class="text-brand-slate leading-relaxed">No dropping your car off and waiting hours. We install your new battery in 20-30 minutes, right where you are.</p>
+        </div>
+
+        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 cursor-default">
+          <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <h3 class="font-semibold text-brand-dark text-lg mb-2">No Surprise Charges</h3>
+          <p class="text-brand-slate leading-relaxed">We quote you one price that covers the battery, installation, and old battery disposal. That's the price you pay.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="how-it-works" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Simple Process</span>
+        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">HOW IT WORKS</h2>
+        <p class="text-brand-slate mt-4 max-w-xl mx-auto text-lg">From dead battery to driving again in three easy steps.</p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <!-- Step 1 -->
+        <div class="step-line flex gap-6 pb-12">
+          <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-display text-2xl text-brand-dark">1</span>
+          </div>
+          <div class="pt-1">
+            <h3 class="font-display text-2xl text-brand-dark tracking-wide">CALL OR GET A QUOTE ONLINE</h3>
+            <p class="text-brand-slate mt-2 leading-relaxed">Tell us your vehicle year, make, and location. We'll give you an upfront price instantly -- no hidden fees.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-line flex gap-6 pb-12">
+          <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-display text-2xl text-brand-dark">2</span>
+          </div>
+          <div class="pt-1">
+            <h3 class="font-display text-2xl text-brand-dark tracking-wide">WE COME TO YOU</h3>
+            <p class="text-brand-slate mt-2 leading-relaxed">A certified technician drives to your location with the correct battery for your vehicle. Home, office, parking lot, roadside -- anywhere.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-line flex gap-6">
+          <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="font-display text-2xl text-brand-dark">3</span>
+          </div>
+          <div class="pt-1">
+            <h3 class="font-display text-2xl text-brand-dark tracking-wide">INSTALLED & DONE</h3>
+            <p class="text-brand-slate mt-2 leading-relaxed">We install your new battery, test the charging system, recycle the old one, and you're back on the road. Usually done in under 30 minutes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-14">
+        <a href="tel:+18005551234" class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors duration-200 cursor-pointer">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Get Your Battery Replaced Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section id="pricing" class="py-20 sm:py-28 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Transparent Pricing</span>
+        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">CAR BATTERY REPLACEMENT COST</h2>
+        <p class="text-brand-slate mt-4 max-w-2xl mx-auto text-lg">One price covers everything: the battery, mobile service, professional installation, and old battery recycling. No hidden fees.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 text-center">
+          <h3 class="font-display text-xl text-brand-slate tracking-wide mb-2">STANDARD</h3>
+          <p class="text-brand-slate text-sm mb-4">Sedans, compacts, most cars</p>
+          <div class="mb-4">
+            <span class="font-display text-5xl text-brand-dark">$149</span>
+            <span class="text-brand-slate text-sm block mt-1">starting at</span>
+          </div>
+          <ul class="text-brand-slate text-sm space-y-2 mb-6 text-left">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Top-brand battery</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Mobile installation</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Charging system test</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>3-year warranty</li>
+          </ul>
+          <a href="#quote" class="block w-full bg-brand-dark hover:bg-brand-dark-light text-white font-semibold py-3 rounded-xl transition-colors duration-200 cursor-pointer text-center">Get Quote</a>
+        </div>
+
+        <div class="bg-brand-dark rounded-2xl p-8 text-center relative ring-2 ring-brand-yellow">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-yellow text-brand-dark text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
+          <h3 class="font-display text-xl text-brand-yellow tracking-wide mb-2">PREMIUM</h3>
+          <p class="text-white/60 text-sm mb-4">SUVs, trucks, European vehicles</p>
+          <div class="mb-4">
+            <span class="font-display text-5xl text-white">$199</span>
+            <span class="text-white/50 text-sm block mt-1">starting at</span>
+          </div>
+          <ul class="text-white/70 text-sm space-y-2 mb-6 text-left">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>AGM / premium battery</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Mobile installation</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Full electrical system check</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>4-year warranty</li>
+          </ul>
+          <a href="#quote" class="block w-full bg-brand-yellow hover:bg-brand-yellow-dark text-brand-dark font-bold py-3 rounded-xl transition-colors duration-200 cursor-pointer text-center">Get Quote</a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 text-center">
+          <h3 class="font-display text-xl text-brand-slate tracking-wide mb-2">FLEET</h3>
+          <p class="text-brand-slate text-sm mb-4">Businesses & fleet accounts</p>
+          <div class="mb-4">
+            <span class="font-display text-5xl text-brand-dark">Call</span>
+            <span class="text-brand-slate text-sm block mt-1">for volume pricing</span>
+          </div>
+          <ul class="text-brand-slate text-sm space-y-2 mb-6 text-left">
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Bulk discounts</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Priority scheduling</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Dedicated account manager</li>
+            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Net-30 invoicing</li>
+          </ul>
+          <a href="tel:+18005551234" class="block w-full bg-brand-dark hover:bg-brand-dark-light text-white font-semibold py-3 rounded-xl transition-colors duration-200 cursor-pointer text-center">Call Us</a>
+        </div>
+      </div>
+
+      <p class="text-center text-brand-slate text-sm mt-8 max-w-xl mx-auto">Exact pricing depends on your vehicle's battery requirements. Get your personalized quote in under 60 seconds.</p>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section class="py-20 sm:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Real Reviews</span>
+        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">DRIVERS LOVE US</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-brand-light rounded-2xl p-8">
+          <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="text-brand-dark leading-relaxed mb-6">"My battery died in my driveway at 6 AM. Called The Battery Guys and a tech was at my house before 7. <strong>New battery installed in 20 minutes</strong> and I still made it to work on time. Way cheaper than the dealer quoted me."</p>
+          <p class="font-semibold text-brand-dark">Maria G.</p>
+          <p class="text-brand-slate text-sm">Miami, FL &bull; 2024 Honda Accord</p>
+        </div>
+
+        <div class="bg-brand-light rounded-2xl p-8">
+          <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="text-brand-dark leading-relaxed mb-6">"Car wouldn't start in the Publix parking lot. <strong>They came to the parking lot</strong>, tested my battery, and replaced it right there. The tech even checked my alternator to make sure nothing else was wrong. Great service."</p>
+          <p class="font-semibold text-brand-dark">James T.</p>
+          <p class="text-brand-slate text-sm">Orlando, FL &bull; 2021 Toyota RAV4</p>
+        </div>
+
+        <div class="bg-brand-light rounded-2xl p-8">
+          <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="text-brand-dark leading-relaxed mb-6">"I manage a fleet of 15 delivery vans. <strong>The Battery Guys handle all our battery replacements on-site</strong> so our drivers don't lose hours at a shop. Saved us thousands this year. Highly recommend for businesses."</p>
+          <p class="font-semibold text-brand-dark">Carlos R.</p>
+          <p class="text-brand-slate text-sm">Tampa, FL &bull; Fleet Manager</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GUARANTEE ===== -->
+  <section class="py-16 sm:py-20 hero-gradient">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="w-16 h-16 bg-brand-yellow/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h2 class="font-display text-4xl sm:text-5xl text-white tracking-wide mb-4">THE BATTERY GUYS GUARANTEE</h2>
+      <p class="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed mb-8">Every battery we install comes with a <strong class="text-white">manufacturer warranty of up to 4 years</strong>, a free charging system diagnostic, and a satisfaction guarantee. If the battery we install has an issue, we'll come back and make it right -- free.</p>
+      <div class="flex flex-wrap justify-center gap-6 text-white/60 text-sm">
+        <span class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Up to 4-Year Battery Warranty</span>
+        <span class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Free Charging System Test</span>
+        <span class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Free Old Battery Recycling</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE AREAS (SEO) ===== -->
+  <section id="areas" class="py-20 sm:py-28 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Mobile Battery Replacement Near You</span>
+        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">CAR BATTERY REPLACEMENT IN FLORIDA</h2>
+        <p class="text-brand-slate mt-4 max-w-2xl mx-auto text-lg">We serve every major metro in Florida. Our mobile technicians come to your home, office, or roadside location.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Miami</h3>
+          <p class="text-brand-slate text-sm">Miami-Dade County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Fort Lauderdale</h3>
+          <p class="text-brand-slate text-sm">Broward County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">West Palm Beach</h3>
+          <p class="text-brand-slate text-sm">Palm Beach County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Orlando</h3>
+          <p class="text-brand-slate text-sm">Orange County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Tampa</h3>
+          <p class="text-brand-slate text-sm">Hillsborough County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">St. Petersburg</h3>
+          <p class="text-brand-slate text-sm">Pinellas County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Jacksonville</h3>
+          <p class="text-brand-slate text-sm">Duval County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Naples</h3>
+          <p class="text-brand-slate text-sm">Collier County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Fort Myers</h3>
+          <p class="text-brand-slate text-sm">Lee County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Sarasota</h3>
+          <p class="text-brand-slate text-sm">Sarasota County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Gainesville</h3>
+          <p class="text-brand-slate text-sm">Alachua County</p>
+        </a>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 hover:border-brand-yellow hover:shadow-md transition-all duration-200 cursor-pointer group">
+          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-colors duration-200">Tallahassee</h3>
+          <p class="text-brand-slate text-sm">Leon County</p>
+        </a>
+      </div>
+
+      <p class="text-center text-brand-slate text-sm mt-8">Don't see your city? Call us -- we likely cover your area. <a href="tel:+18005551234" class="text-brand-red font-semibold cursor-pointer">(800) 555-1234</a></p>
+    </div>
+  </section>
+
+  <!-- ===== FAQ (SEO GOLDMINE) ===== -->
+  <section id="faq" class="py-20 sm:py-28 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Common Questions</span>
+        <h2 class="font-display text-4xl sm:text-5xl text-brand-dark mt-3 tracking-wide">CAR BATTERY REPLACEMENT FAQ</h2>
+      </div>
+
+      <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
+            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">How long does a mobile car battery replacement take?</h3>
+            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p class="text-brand-slate leading-relaxed" itemprop="text">Most car battery replacements take 20-30 minutes from the time our technician arrives. We test your old battery, install the new one, verify your charging system is working properly, and recycle the old battery -- all at your location.</p>
+          </div>
+        </div>
+
+        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
+            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">How much does a mobile battery replacement cost in Florida?</h3>
+            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p class="text-brand-slate leading-relaxed" itemprop="text">Car battery replacement with The Battery Guys starts at $149 for standard vehicles, which includes the battery, mobile service, professional installation, and old battery disposal. SUVs, trucks, and European vehicles with AGM batteries typically start at $199. We quote you one upfront price with no hidden fees -- the price you see is the price you pay.</p>
+          </div>
+        </div>
+
+        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
+            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">What brands of car batteries do you install?</h3>
+            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p class="text-brand-slate leading-relaxed" itemprop="text">We carry top-tier battery brands including Interstate, DieHard, and Optima. Every battery we install meets or exceeds the OEM specifications for your specific vehicle. Our technicians will recommend the right battery based on your car's requirements and your driving habits.</p>
+          </div>
+        </div>
+
+        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
+            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">Can you replace my car battery at my home or office?</h3>
+            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p class="text-brand-slate leading-relaxed" itemprop="text">Yes -- that's exactly what we do. Our mobile battery replacement service comes to wherever your car is: your home driveway, office parking lot, apartment complex, shopping center, airport parking, or even the side of the road. Anywhere in Florida that's safe for us to work on your vehicle.</p>
+          </div>
+        </div>
+
+        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
+            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">How do I know if I need a new car battery?</h3>
+            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p class="text-brand-slate leading-relaxed" itemprop="text">Common signs your car battery needs replacement: slow engine cranking, dim headlights, dashboard battery warning light, needing frequent jump starts, or a battery that's more than 3-4 years old (especially in Florida's heat, which shortens battery life). Our technicians can test your battery on-site for free and tell you exactly how much life it has left.</p>
+          </div>
+        </div>
+
+        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
+            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">Do you offer same-day car battery replacement?</h3>
+            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p class="text-brand-slate leading-relaxed" itemprop="text">Yes, we offer same-day mobile car battery replacement across Florida, 7 days a week, including holidays. In most areas, we can have a technician to your location within 45 minutes of your call. For non-emergency replacements, you can also schedule a time that works for you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="py-16 sm:py-20 bg-brand-red">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white tracking-wide">DEAD BATTERY? WE'RE ON OUR WAY.</h2>
+      <p class="text-white/80 mt-4 text-lg max-w-xl mx-auto">Call now for same-day mobile car battery replacement anywhere in Florida. Upfront price, no hidden fees, installed at your location.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+        <a href="tel:+18005551234" class="inline-flex items-center justify-center gap-3 bg-white text-brand-red hover:bg-gray-100 font-bold text-xl px-10 py-5 rounded-xl transition-colors duration-200 cursor-pointer">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (800) 555-1234
+        </a>
+        <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-lg px-8 py-5 rounded-xl border border-white/30 transition-colors duration-200 cursor-pointer">
+          Get a Free Quote Online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-brand-dark pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <a href="#" class="flex items-center gap-2 cursor-pointer" aria-label="Home">
+            <svg class="w-7 h-7 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="18" rx="2"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/><path d="M12 10l-2 4h4l-2 4"/></svg>
+            <span class="font-display text-xl text-white tracking-wide">THE BATTERY GUYS</span>
+          </a>
+          <p class="text-white/50 mt-4 text-sm leading-relaxed">Florida's mobile car battery replacement service. We come to you -- home, office, or roadside. Same-day service, every day.</p>
+        </div>
+
+        <!-- SEO: Service keywords as footer links -->
+        <div>
+          <h4 class="font-display text-lg text-white tracking-wide mb-4">OUR SERVICE</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Mobile Battery Replacement</a></li>
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Car Battery Installation</a></li>
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Battery Testing & Diagnostics</a></li>
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Charging System Check</a></li>
+            <li><a href="#pricing" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Fleet Battery Service</a></li>
+            <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">Same-Day Battery Delivery</a></li>
+          </ul>
+        </div>
+
+        <!-- SEO: Location keywords -->
+        <div>
+          <h4 class="font-display text-lg text-white tracking-wide mb-4">SERVICE AREAS</h4>
+          <ul class="space-y-2.5">
+            <li><span class="text-white/50 text-sm">Battery Replacement Miami</span></li>
+            <li><span class="text-white/50 text-sm">Battery Replacement Orlando</span></li>
+            <li><span class="text-white/50 text-sm">Battery Replacement Tampa</span></li>
+            <li><span class="text-white/50 text-sm">Battery Replacement Jacksonville</span></li>
+            <li><span class="text-white/50 text-sm">Battery Replacement Fort Lauderdale</span></li>
+            <li><span class="text-white/50 text-sm">Battery Replacement West Palm Beach</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display text-lg text-white tracking-wide mb-4">CONTACT</h4>
+          <ul class="space-y-2.5">
+            <li><a href="tel:+18005551234" class="text-brand-yellow font-semibold cursor-pointer">(800) 555-1234</a></li>
+            <li><a href="mailto:help@thebatteryguys.com" class="text-white/50 hover:text-brand-yellow text-sm transition-colors duration-200 cursor-pointer">help@thebatteryguys.com</a></li>
+            <li><span class="text-white/50 text-sm">24/7/365 Service</span></li>
+            <li><span class="text-white/50 text-sm">Licensed & Insured</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <p class="text-white/30 text-sm">&copy; 2026 The Battery Guys. Mobile Car Battery Replacement in Florida. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-white/30 hover:text-white/60 text-sm transition-colors duration-200 cursor-pointer">Privacy Policy</a>
+          <a href="#" class="text-white/30 hover:text-white/60 text-sm transition-colors duration-200 cursor-pointer">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING MOBILE CTA ===== -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/95 backdrop-blur-sm border-t border-white/10 p-3 sm:hidden">
+    <div class="flex gap-2">
+      <a href="tel:+18005551234" class="flex-1 flex items-center justify-center gap-2 bg-brand-red text-white font-bold py-3.5 rounded-xl cursor-pointer">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Now
+      </a>
+      <a href="#quote" class="flex-1 flex items-center justify-center gap-2 bg-brand-yellow text-brand-dark font-bold py-3.5 rounded-xl cursor-pointer">
+        Free Quote
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const menuClose = document.getElementById('mobileMenuClose');
+    const menu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => { menu.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
+    menuClose.addEventListener('click', () => { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); });
+    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }));
+    document.addEventListener('click', (e) => { if (menu.classList.contains('open') && !menu.contains(e.target) && !menuBtn.contains(e.target)) { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }});
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('open')) { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.focus(); }});
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = answer.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = '');
+        document.querySelectorAll('.faq-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
+
+        // Open clicked (if it was closed)
+        if (!isOpen) {
+          answer.classList.add('open');
+          icon.style.transform = 'rotate(180deg)';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Navbar scroll
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('shadow-lg', window.scrollY > 20); });
+  </script>
+
+  <!-- ===== STRUCTURED DATA ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://thebatteryguys.com",
+    "name": "The Battery Guys",
+    "description": "Mobile car battery replacement service in Florida. We come to your location and replace your car battery on the spot. Same-day service, upfront pricing, all makes and models.",
+    "url": "https://thebatteryguys.com",
+    "telephone": "+1-800-555-1234",
+    "email": "help@thebatteryguys.com",
+    "image": "https://thebatteryguys.com/assets/og-image.jpg",
+    "priceRange": "$149-$299",
+    "areaServed": {
+      "@type": "State",
+      "name": "Florida",
+      "sameAs": "https://en.wikipedia.org/wiki/Florida"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "27.6648",
+      "longitude": "-81.5158"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "reviewCount": "2400"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Mobile Car Battery Replacement",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Standard Car Battery Replacement",
+            "description": "Mobile battery replacement for sedans and compact cars, including battery, installation, charging system test, and old battery recycling."
+          },
+          "price": "149.00",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Premium AGM Battery Replacement",
+            "description": "Mobile AGM battery replacement for SUVs, trucks, and European vehicles, including battery, installation, full electrical system check, and old battery recycling."
+          },
+          "price": "199.00",
+          "priceCurrency": "USD"
+        }
+      ]
+    },
+    "sameAs": []
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Mobile Car Battery Replacement",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "The Battery Guys"
+    },
+    "serviceType": "Mobile Car Battery Replacement",
+    "areaServed": [
+      {"@type": "City", "name": "Miami", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "Orlando", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "Tampa", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "Jacksonville", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "Fort Lauderdale", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "West Palm Beach", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "St. Petersburg", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "Naples", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "Fort Myers", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "Sarasota", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "Gainesville", "containedInPlace": {"@type": "State", "name": "Florida"}},
+      {"@type": "City", "name": "Tallahassee", "containedInPlace": {"@type": "State", "name": "Florida"}}
+    ],
+    "description": "We come to your location and replace your car battery on the spot. No tow truck, no shop visit. Same-day mobile car battery replacement across Florida.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "149",
+      "highPrice": "299",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</body>
+</html>

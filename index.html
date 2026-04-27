@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics — replace G-XXXXXXXXXX with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='25' y='15' width='50' height='75' rx='8' fill='%23F59E0B'/><rect x='38' y='5' width='8' height='12' rx='2' fill='%23F59E0B'/><rect x='54' y='5' width='8' height='12' rx='2' fill='%23F59E0B'/><path d='M50 40 L44 55 H56 L50 70' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
   <title>The Battery Guys | Mobile Battery Replacement in South Florida | Palm Beach, Broward, Miami-Dade | Cars, Trucks, Motorcycles, Boats, RVs | We Come to You</title>
   <meta name="description" content="Dead battery? The Battery Guys replace batteries for cars, trucks, motorcycles, RVs, boats, and jet skis at your location in South Florida. Serving Palm Beach County, Broward County, and Miami-Dade County. Mobile battery replacement at your home, marina, or roadside. Same-day service. Call (800) 555-1234.">
   <meta name="keywords" content="mobile car battery replacement, car battery replacement near me, mobile battery service South Florida, car battery change at home, dead car battery help, battery replacement service, car battery installation, same day battery replacement, boat battery replacement, RV battery replacement, marine battery, truck battery, motorcycle battery, motorcycle battery replacement, jet ski battery, fleet battery service, Palm Beach battery replacement, Broward battery replacement, Miami battery replacement, South Florida mobile battery">
@@ -284,7 +292,11 @@
           <h2 class="font-display text-2xl sm:text-3xl text-brand-dark font-bold text-center mb-1">Get Your Free Quote</h2>
           <p class="text-brand-slate text-center text-sm mb-6">We'll text you a price in minutes</p>
 
-          <form action="#" method="POST" class="space-y-4">
+          <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+            <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-KEY">
+            <input type="hidden" name="subject" value="New Battery Quote Request - The Battery Guys">
+            <input type="hidden" name="redirect" value="https://thebatteryguys.com/?thanks=1">
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
             <div>
               <label for="q-type" class="block text-sm font-medium text-brand-dark mb-1.5">Vehicle Type</label>
               <select id="q-type" name="type" required class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-brand-light text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent cursor-pointer">

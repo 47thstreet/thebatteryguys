@@ -26,7 +26,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -35,23 +35,24 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Bebas Neue"', 'sans-serif'],
-            body: ['"Source Sans 3"', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif'],
           },
           colors: {
             brand: {
               yellow: '#F59E0B',
               'yellow-light': '#FCD34D',
               'yellow-dark': '#D97706',
-              dark: '#0F172A',
-              'dark-mid': '#1E293B',
-              'dark-light': '#334155',
+              dark: '#1C1917',
+              'dark-mid': '#292524',
+              'dark-light': '#44403C',
               red: '#DC2626',
               'red-hover': '#B91C1C',
-              slate: '#475569',
-              light: '#F8FAFC',
+              slate: '#57534E',
+              light: '#FAFAF9',
               white: '#FFFFFF',
               green: '#16A34A',
+              border: '#E7E5E4',
             }
           }
         }
@@ -62,22 +63,39 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Source Sans 3', sans-serif; color: #0F172A; background: #F8FAFC; letter-spacing: -0.01em; }
-    .font-display { font-family: 'Bebas Neue', sans-serif; letter-spacing: -0.02em; }
-    h1, h2, h3, h4, h5, h6 { letter-spacing: -0.02em; }
-    .hero-gradient { background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); }
-    .hero-bg { position: relative; }
-    .hero-bg::before {
-      content: '';
+    body { font-family: 'Inter', sans-serif; color: #1C1917; background: #FAFAF9; letter-spacing: -0.01em; }
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.02em; }
+    .hero-gradient { background: linear-gradient(135deg, #1C1917 0%, #292524 60%, #1C1917 100%); }
+    .hero-glow {
       position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      opacity: 0.12;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
       z-index: 1;
+      pointer-events: none;
+    }
+    .hero-glow-2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+      bottom: -50px;
+      left: 10%;
+      z-index: 1;
+      pointer-events: none;
     }
     .img-cover { object-fit: cover; width: 100%; height: 100%; }
     .img-reveal { opacity: 0; transition: opacity 0.5s ease; }
     .img-reveal.loaded { opacity: 1; }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
 
     @keyframes pulse-ring {
       0% { transform: scale(1); opacity: 0.5; }
@@ -94,29 +112,28 @@
       z-index: -1;
     }
 
-    .service-card { transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04); }
-    .service-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04); }
+    .service-card { transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background-color 0.2s ease-out; box-shadow: 0 1px 3px rgba(28, 25, 23, 0.04), 0 1px 2px rgba(28, 25, 23, 0.03); }
+    .service-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(28, 25, 23, 0.08), 0 2px 4px rgba(28, 25, 23, 0.04); background-color: #F5F5F4; }
 
-    .step-line { position: relative; }
-    .step-line::after {
+    /* How it works connector line */
+    .step-connector { position: relative; }
+    .step-connector::after {
       content: '';
       position: absolute;
-      top: 48px;
-      left: 24px;
-      width: 2px;
-      height: calc(100% - 48px);
-      background: #E2E8F0;
+      top: 50%;
+      right: -24px;
+      width: 48px;
+      border-top: 2px dashed #D6D3D1;
+      z-index: 1;
     }
-    .step-line:last-child::after { display: none; }
 
-    /* Apple HIG: Focus states for all interactive elements */
+    /* Focus states */
     a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible {
       outline: 2px solid #F59E0B;
       outline-offset: 2px;
       border-radius: 4px;
     }
 
-    /* Apple HIG: Default transition on interactive elements */
     a, button { transition: all 0.2s ease-out; }
 
     @media (prefers-reduced-motion: reduce) {
@@ -131,8 +148,13 @@
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.25s ease-out; }
     .faq-answer.open { max-height: 300px; }
 
-    /* Apple HIG: Navbar scroll border */
-    nav.scrolled { border-bottom-color: rgba(255, 255, 255, 0.15); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+    /* Navbar glass on scroll */
+    nav.scrolled { background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom-color: #E7E5E4; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    nav.scrolled .nav-brand { color: #1C1917; }
+    nav.scrolled .nav-link { color: #57534E; }
+    nav.scrolled .nav-link:hover { color: #D97706; }
+    nav.scrolled .nav-icon { color: #1C1917; }
+    nav.scrolled .mobile-menu-btn-icon { color: #1C1917; }
   </style>
 </head>
 <body class="antialiased">
@@ -145,32 +167,32 @@
   </div>
 
   <!-- ===== NAVBAR ===== -->
-  <nav class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-xl border-b border-white/10">
+  <nav class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-xl border-b border-white/10 transition-all duration-300 ease-out">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 sm:h-20">
-        <a href="/" class="flex items-center gap-2 cursor-pointer" aria-label="The Battery Guys Home">
+      <div class="flex items-center justify-between h-16 sm:h-[72px]">
+        <a href="/" class="flex items-center gap-2.5 cursor-pointer" aria-label="The Battery Guys Home">
           <svg class="w-8 h-8 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="6" y="4" width="12" height="18" rx="2"></rect>
             <line x1="10" y1="1" x2="10" y2="4"></line>
             <line x1="14" y1="1" x2="14" y2="4"></line>
             <path d="M12 10l-2 4h4l-2 4"></path>
           </svg>
-          <span class="font-display text-2xl sm:text-3xl text-white tracking-wide">THE BATTERY GUYS</span>
+          <span class="nav-brand font-display text-xl sm:text-2xl text-white font-bold tracking-tight transition-colors duration-300">THE BATTERY GUYS</span>
         </a>
 
         <div class="hidden md:flex items-center gap-8">
-          <a href="#how-it-works" class="text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">How It Works</a>
-          <a href="#pricing" class="text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">Pricing</a>
-          <a href="#areas" class="text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">Service Areas</a>
-          <a href="#faq" class="text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">FAQ</a>
-          <a href="tel:+18005551234" class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-semibold px-5 py-3 rounded-lg transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer">
+          <a href="#how-it-works" class="nav-link text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">How It Works</a>
+          <a href="#pricing" class="nav-link text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">Pricing</a>
+          <a href="#areas" class="nav-link text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">Service Areas</a>
+          <a href="#faq" class="nav-link text-white/80 hover:text-brand-yellow transition-all duration-200 ease-out text-sm font-medium cursor-pointer">FAQ</a>
+          <a href="tel:+18005551234" class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer text-sm">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             (800) 555-1234
           </a>
         </div>
 
-        <button id="mobileMenuBtn" class="md:hidden text-white p-2.5 cursor-pointer" aria-label="Open menu" aria-expanded="false">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <button id="mobileMenuBtn" class="md:hidden p-2.5 cursor-pointer" aria-label="Open menu" aria-expanded="false">
+          <svg class="w-6 h-6 mobile-menu-btn-icon text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
     </div>
@@ -183,7 +205,7 @@
       <a href="#pricing" class="text-white text-lg font-medium cursor-pointer mobile-link">Pricing</a>
       <a href="#areas" class="text-white text-lg font-medium cursor-pointer mobile-link">Service Areas</a>
       <a href="#faq" class="text-white text-lg font-medium cursor-pointer mobile-link">FAQ</a>
-      <a href="tel:+18005551234" class="mt-4 flex items-center justify-center gap-2 bg-brand-red text-white font-semibold px-5 py-3 rounded-lg cursor-pointer">
+      <a href="tel:+18005551234" class="mt-4 flex items-center justify-center gap-2 bg-brand-red text-white font-semibold px-5 py-3 rounded-xl cursor-pointer">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         Call Now
       </a>
@@ -191,21 +213,23 @@
   </nav>
 
   <!-- ===== HERO ===== -->
-  <section class="hero-gradient hero-bg pt-16 sm:pt-20 pb-20 sm:pb-28 relative overflow-hidden">
+  <section class="hero-gradient pt-16 sm:pt-20 pb-20 sm:pb-28 relative overflow-hidden">
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Left: Copy -->
         <div>
           <div class="inline-flex items-center gap-2 bg-brand-green/10 border border-brand-green/30 rounded-full px-4 py-1.5 mb-6">
-            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-            <span class="text-green-300 text-sm font-medium">Serving Palm Beach | Broward | Miami-Dade</span>
+            <span class="w-2 h-2 bg-green-400 rounded-full pulse-dot"></span>
+            <span class="text-green-300 text-sm font-medium">Technicians Dispatching Now</span>
           </div>
 
-          <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white leading-[0.95] mb-6 tracking-wide">
-            MOBILE CAR<br>
-            BATTERY<br>
-            <span class="text-brand-yellow">REPLACEMENT</span>
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.05] mb-6 font-extrabold">
+            Mobile Car<br>
+            Battery<br>
+            <span class="text-brand-yellow">Replacement</span>
           </h1>
 
           <p class="text-white/70 text-lg sm:text-xl max-w-lg mb-4 leading-relaxed">
@@ -226,8 +250,18 @@
             </a>
           </div>
 
-          <!-- Trust bar -->
+          <!-- Trust bar with social proof -->
           <div class="flex flex-wrap items-center gap-6 text-white/50 text-sm">
+            <!-- Avatar circles -->
+            <div class="flex items-center gap-3">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-brand-yellow/20 border-2 border-brand-dark flex items-center justify-center text-xs font-bold text-brand-yellow">M</div>
+                <div class="w-8 h-8 rounded-full bg-brand-yellow/20 border-2 border-brand-dark flex items-center justify-center text-xs font-bold text-brand-yellow">J</div>
+                <div class="w-8 h-8 rounded-full bg-brand-yellow/20 border-2 border-brand-dark flex items-center justify-center text-xs font-bold text-brand-yellow">C</div>
+                <div class="w-8 h-8 rounded-full bg-brand-yellow/30 border-2 border-brand-dark flex items-center justify-center text-xs font-bold text-brand-yellow">+</div>
+              </div>
+              <span class="text-white/60">Trusted by 50,000+ drivers</span>
+            </div>
             <div class="flex items-center gap-1.5">
               <div class="flex gap-0.5">
                 <svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -236,7 +270,7 @@
                 <svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 <svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               </div>
-              <span>4.9/5 (2,400+ reviews)</span>
+              <span>4.9 on Google</span>
             </div>
             <div class="flex items-center gap-1.5">
               <svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -246,14 +280,14 @@
         </div>
 
         <!-- Right: Quote Form -->
-        <div id="quote" class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg shadow-black/10 border border-gray-100">
-          <h2 class="font-display text-3xl text-brand-dark tracking-wide text-center mb-1">GET YOUR FREE QUOTE</h2>
+        <div id="quote" class="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/20 border border-stone-200/50 ring-1 ring-brand-yellow/20">
+          <h2 class="font-display text-2xl sm:text-3xl text-brand-dark font-bold text-center mb-1">Get Your Free Quote</h2>
           <p class="text-brand-slate text-center text-sm mb-6">We'll text you a price in minutes</p>
 
           <form action="#" method="POST" class="space-y-4">
             <div>
               <label for="q-type" class="block text-sm font-medium text-brand-dark mb-1.5">Vehicle Type</label>
-              <select id="q-type" name="type" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-brand-light text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent cursor-pointer">
+              <select id="q-type" name="type" required class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-brand-light text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent cursor-pointer">
                 <option value="">Select Type</option>
                 <option value="car">Car / Sedan</option>
                 <option value="suv">SUV / Crossover</option>
@@ -269,7 +303,7 @@
             </div>
             <div>
               <label for="q-year" class="block text-sm font-medium text-brand-dark mb-1.5">Vehicle Year</label>
-              <select id="q-year" name="year" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-brand-light text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent cursor-pointer">
+              <select id="q-year" name="year" required class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-brand-light text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent cursor-pointer">
                 <option value="">Select Year</option>
                 <script>for(let y=2026;y>=2000;y--) document.write(`<option value="${y}">${y}</option>`)</script>
                 <option value="older">1999 or older</option>
@@ -277,18 +311,18 @@
             </div>
             <div>
               <label for="q-make" class="block text-sm font-medium text-brand-dark mb-1.5">Vehicle Make</label>
-              <select id="q-make" name="make" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-brand-light text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent cursor-pointer">
+              <select id="q-make" name="make" required class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-brand-light text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent cursor-pointer">
                 <option value="">Select Make</option>
                 <option>Acura</option><option>Audi</option><option>BMW</option><option>Buick</option><option>Cadillac</option><option>Chevrolet</option><option>Chrysler</option><option>Dodge</option><option>Ford</option><option>GMC</option><option>Honda</option><option>Hyundai</option><option>Infiniti</option><option>Jeep</option><option>Kia</option><option>Lexus</option><option>Lincoln</option><option>Mazda</option><option>Mercedes-Benz</option><option>Nissan</option><option>Ram</option><option>Subaru</option><option>Tesla</option><option>Toyota</option><option>Volkswagen</option><option>Volvo</option><option>Other</option>
               </select>
             </div>
             <div>
               <label for="q-zip" class="block text-sm font-medium text-brand-dark mb-1.5">Your Zip Code</label>
-              <input type="text" id="q-zip" name="zip" required placeholder="e.g. 33101" pattern="[0-9]{5}" maxlength="5" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-brand-light text-brand-dark placeholder-brand-slate/50 focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent">
+              <input type="text" id="q-zip" name="zip" required placeholder="e.g. 33101" pattern="[0-9]{5}" maxlength="5" class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-brand-light text-brand-dark placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent">
             </div>
             <div>
               <label for="q-phone" class="block text-sm font-medium text-brand-dark mb-1.5">Phone Number</label>
-              <input type="tel" id="q-phone" name="phone" required placeholder="(555) 123-4567" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-brand-light text-brand-dark placeholder-brand-slate/50 focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent">
+              <input type="tel" id="q-phone" name="phone" required placeholder="(555) 123-4567" class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-brand-light text-brand-dark placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:border-transparent">
             </div>
             <button type="submit" class="w-full bg-brand-red hover:bg-brand-red-hover text-white font-bold py-4 rounded-xl transition-all duration-200 ease-out hover:scale-[1.01] cursor-pointer text-lg mt-2">
               Get My Free Quote
@@ -301,23 +335,23 @@
   </section>
 
   <!-- ===== SOCIAL PROOF BAR ===== -->
-  <section class="bg-white border-b border-gray-100 py-8">
+  <section class="bg-white border-t border-b border-brand-border py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
-        <div>
-          <span class="font-display text-4xl text-brand-dark">50K+</span>
+        <div class="relative">
+          <span class="font-display text-4xl font-bold text-brand-yellow">50K+</span>
           <p class="text-brand-slate text-sm mt-1">Batteries Replaced</p>
         </div>
-        <div>
-          <span class="font-display text-4xl text-brand-dark">4.9</span>
+        <div class="relative before:absolute before:left-0 before:top-2 before:bottom-2 before:w-px before:bg-brand-border sm:before:block before:hidden">
+          <span class="font-display text-4xl font-bold text-brand-yellow">4.9</span>
           <p class="text-brand-slate text-sm mt-1">Average Rating</p>
         </div>
-        <div>
-          <span class="font-display text-4xl text-brand-dark">45<span class="text-2xl">min</span></span>
+        <div class="relative before:absolute before:left-0 before:top-2 before:bottom-2 before:w-px before:bg-brand-border sm:before:block before:hidden">
+          <span class="font-display text-4xl font-bold text-brand-yellow">45<span class="text-2xl">min</span></span>
           <p class="text-brand-slate text-sm mt-1">Avg. Arrival Time</p>
         </div>
-        <div>
-          <span class="font-display text-4xl text-brand-dark">24/7</span>
+        <div class="relative before:absolute before:left-0 before:top-2 before:bottom-2 before:w-px before:bg-brand-border sm:before:block before:hidden">
+          <span class="font-display text-4xl font-bold text-brand-yellow">24/7</span>
           <p class="text-brand-slate text-sm mt-1">Always Available</p>
         </div>
       </div>
@@ -325,38 +359,45 @@
   </section>
 
   <!-- ===== PROBLEM / SOLUTION ===== -->
-  <section class="py-20 sm:py-28 bg-brand-light">
+  <section class="py-24 sm:py-32 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Skip the Shop</span>
-        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">WHY WAIT AT AN AUTO SHOP?</h2>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark mt-3 font-bold">Why Wait at an Auto Shop?</h2>
         <p class="text-brand-slate mt-4 max-w-2xl mx-auto text-lg">A dead car battery shouldn't ruin your day. We bring the battery to you and install it wherever your car is parked.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 cursor-default">
-          <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-7 h-7 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div class="service-card bg-white rounded-2xl p-8 border border-brand-border cursor-default">
+          <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <h3 class="font-semibold text-brand-dark text-lg mb-2">No Tow Truck Needed</h3>
+          <h3 class="font-display font-bold text-brand-dark text-lg mb-2">No Tow Truck Needed</h3>
           <p class="text-brand-slate leading-relaxed">Don't pay $100+ for a tow to a shop. We drive to your location with the right battery already on our truck.</p>
         </div>
 
-        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 cursor-default">
-          <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-7 h-7 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div class="service-card bg-white rounded-2xl p-8 border border-brand-border cursor-default">
+          <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <h3 class="font-semibold text-brand-dark text-lg mb-2">No Sitting in a Waiting Room</h3>
+          <h3 class="font-display font-bold text-brand-dark text-lg mb-2">No Sitting in a Waiting Room</h3>
           <p class="text-brand-slate leading-relaxed">No dropping your car off and waiting hours. We install your new battery in 20-30 minutes, right where you are.</p>
         </div>
 
-        <div class="service-card bg-white rounded-2xl p-8 border border-gray-100 cursor-default">
-          <div class="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center mb-5">
-            <svg class="w-7 h-7 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <div class="service-card bg-white rounded-2xl p-8 border border-brand-border cursor-default">
+          <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <h3 class="font-semibold text-brand-dark text-lg mb-2">No Surprise Charges</h3>
+          <h3 class="font-display font-bold text-brand-dark text-lg mb-2">No Surprise Charges</h3>
           <p class="text-brand-slate leading-relaxed">We quote you one price that covers the battery, installation, and old battery disposal. That's the price you pay.</p>
         </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="#quote" class="inline-flex items-center justify-center gap-2 border-2 border-brand-yellow text-brand-yellow-dark hover:bg-brand-yellow hover:text-brand-dark font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 ease-out cursor-pointer">
+          Get Your Free Quote
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -380,46 +421,50 @@
   </section>
 
   <!-- ===== HOW IT WORKS ===== -->
-  <section id="how-it-works" class="py-20 sm:py-28 bg-white">
+  <section id="how-it-works" class="py-24 sm:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Simple Process</span>
-        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">HOW IT WORKS</h2>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark mt-3 font-bold">How It Works</h2>
         <p class="text-brand-slate mt-4 max-w-xl mx-auto text-lg">From dead battery to driving again in three easy steps.</p>
       </div>
 
-      <div class="max-w-2xl mx-auto">
+      <!-- Horizontal 3-column layout -->
+      <div class="grid md:grid-cols-3 gap-0 max-w-5xl mx-auto">
         <!-- Step 1 -->
-        <div class="step-line flex gap-6 pb-12">
-          <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center flex-shrink-0">
-            <span class="font-display text-2xl text-brand-dark">1</span>
+        <div class="step-connector relative bg-white rounded-2xl border border-brand-border p-8 text-center mx-2 mb-4 md:mb-0">
+          <div class="w-16 h-16 bg-brand-yellow/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <span class="font-display text-3xl font-bold text-brand-yellow">1</span>
           </div>
-          <div class="pt-1">
-            <h3 class="font-display text-2xl text-brand-dark tracking-wide">CALL OR GET A QUOTE ONLINE</h3>
-            <p class="text-brand-slate mt-2 leading-relaxed">Tell us your vehicle year, make, and location. We'll give you an upfront price instantly -- no hidden fees.</p>
+          <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brand-yellow-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           </div>
+          <h3 class="font-display text-xl font-bold text-brand-dark mb-2">Call or Get a Quote Online</h3>
+          <p class="text-brand-slate leading-relaxed text-sm">Tell us your vehicle year, make, and location. We'll give you an upfront price instantly -- no hidden fees.</p>
         </div>
 
         <!-- Step 2 -->
-        <div class="step-line flex gap-6 pb-12">
-          <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center flex-shrink-0">
-            <span class="font-display text-2xl text-brand-dark">2</span>
+        <div class="step-connector relative bg-white rounded-2xl border border-brand-border p-8 text-center mx-2 mb-4 md:mb-0">
+          <div class="w-16 h-16 bg-brand-yellow/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <span class="font-display text-3xl font-bold text-brand-yellow">2</span>
           </div>
-          <div class="pt-1">
-            <h3 class="font-display text-2xl text-brand-dark tracking-wide">WE COME TO YOU</h3>
-            <p class="text-brand-slate mt-2 leading-relaxed">A certified technician drives to your location with the correct battery for your vehicle. Home, office, parking lot, roadside -- anywhere.</p>
+          <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brand-yellow-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           </div>
+          <h3 class="font-display text-xl font-bold text-brand-dark mb-2">We Come to You</h3>
+          <p class="text-brand-slate leading-relaxed text-sm">A certified technician drives to your location with the correct battery for your vehicle. Home, office, parking lot, roadside -- anywhere.</p>
         </div>
 
         <!-- Step 3 -->
-        <div class="step-line flex gap-6">
-          <div class="w-12 h-12 bg-brand-yellow rounded-xl flex items-center justify-center flex-shrink-0">
-            <span class="font-display text-2xl text-brand-dark">3</span>
+        <div class="relative bg-white rounded-2xl border border-brand-border p-8 text-center mx-2">
+          <div class="w-16 h-16 bg-brand-yellow/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <span class="font-display text-3xl font-bold text-brand-yellow">3</span>
           </div>
-          <div class="pt-1">
-            <h3 class="font-display text-2xl text-brand-dark tracking-wide">INSTALLED & DONE</h3>
-            <p class="text-brand-slate mt-2 leading-relaxed">We install your new battery, test the charging system, recycle the old one, and you're back on the road. Usually done in under 30 minutes.</p>
+          <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brand-yellow-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
+          <h3 class="font-display text-xl font-bold text-brand-dark mb-2">Installed and Done</h3>
+          <p class="text-brand-slate leading-relaxed text-sm">We install your new battery, test the charging system, recycle the old one, and you're back on the road. Usually done in under 30 minutes.</p>
         </div>
       </div>
 
@@ -433,7 +478,7 @@
   </section>
 
   <!-- ===== TRUST / IMAGE SECTION ===== -->
-  <section class="py-20 sm:py-28 bg-brand-light">
+  <section class="py-24 sm:py-32 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Image grid -->
@@ -447,7 +492,7 @@
             </div>
             <div class="rounded-2xl overflow-hidden aspect-square bg-brand-yellow flex items-center justify-center p-6">
               <div class="text-center">
-                <span class="font-display text-6xl text-brand-dark">40%</span>
+                <span class="font-display text-6xl font-extrabold text-brand-dark">40%</span>
                 <p class="text-brand-dark font-semibold mt-1">Less Than Most Dealers</p>
               </div>
             </div>
@@ -457,40 +502,40 @@
         <!-- Copy -->
         <div>
           <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">The Smarter Choice</span>
-          <h2 class="font-display text-4xl sm:text-5xl text-brand-dark mt-3 tracking-wide leading-none">SKIP THE DEALER.<br>SKIP THE SHOP.</h2>
+          <h2 class="font-display text-3xl sm:text-4xl text-brand-dark mt-3 font-bold leading-tight">Skip the Dealer.<br>Skip the Shop.</h2>
           <p class="text-brand-slate mt-6 text-lg leading-relaxed">Dealerships charge $250-$400 for a battery replacement. Auto parts stores sell you the battery but you still need to install it or pay someone to. We deliver and install at your location for one flat price.</p>
 
           <div class="mt-8 space-y-4">
-            <div class="flex items-center gap-4 bg-white rounded-xl p-4 border border-gray-100">
-              <div class="w-12 h-12 bg-brand-yellow/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <div class="flex items-center gap-4 bg-white rounded-xl p-4 border border-brand-border">
+              <div class="w-12 h-12 bg-brand-yellow/10 rounded-xl flex items-center justify-center flex-shrink-0">
                 <svg class="w-6 h-6 text-brand-yellow-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
               <div>
-                <h3 class="font-semibold text-brand-dark">Done in 30 Minutes</h3>
+                <h3 class="font-display font-bold text-brand-dark">Done in 30 Minutes</h3>
                 <p class="text-brand-slate text-sm">Average install time from arrival to driving</p>
               </div>
             </div>
-            <div class="flex items-center gap-4 bg-white rounded-xl p-4 border border-gray-100">
-              <div class="w-12 h-12 bg-brand-yellow/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <div class="flex items-center gap-4 bg-white rounded-xl p-4 border border-brand-border">
+              <div class="w-12 h-12 bg-brand-yellow/10 rounded-xl flex items-center justify-center flex-shrink-0">
                 <svg class="w-6 h-6 text-brand-yellow-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
               </div>
               <div>
-                <h3 class="font-semibold text-brand-dark">Fully Stocked Service Trucks</h3>
+                <h3 class="font-display font-bold text-brand-dark">Fully Stocked Service Trucks</h3>
                 <p class="text-brand-slate text-sm">Batteries for every make and model on board</p>
               </div>
             </div>
-            <div class="flex items-center gap-4 bg-white rounded-xl p-4 border border-gray-100">
-              <div class="w-12 h-12 bg-brand-yellow/10 rounded-lg flex items-center justify-center flex-shrink-0">
+            <div class="flex items-center gap-4 bg-white rounded-xl p-4 border border-brand-border">
+              <div class="w-12 h-12 bg-brand-yellow/10 rounded-xl flex items-center justify-center flex-shrink-0">
                 <svg class="w-6 h-6 text-brand-yellow-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <div>
-                <h3 class="font-semibold text-brand-dark">ASE-Certified Technicians</h3>
+                <h3 class="font-display font-bold text-brand-dark">ASE-Certified Technicians</h3>
                 <p class="text-brand-slate text-sm">Background checked, uniformed, professional</p>
               </div>
             </div>
           </div>
 
-          <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer mt-8">
+          <a href="#quote" class="inline-flex items-center justify-center gap-2 border-2 border-brand-yellow text-brand-yellow-dark hover:bg-brand-yellow hover:text-brand-dark font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 ease-out cursor-pointer mt-8">
             Get Your Free Quote
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
@@ -500,40 +545,42 @@
   </section>
 
   <!-- ===== PRICING ===== -->
-  <section id="pricing" class="py-20 sm:py-28 bg-brand-light">
+  <section id="pricing" class="py-24 sm:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Transparent Pricing</span>
-        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">CAR BATTERY REPLACEMENT COST</h2>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark mt-3 font-bold">Car Battery Replacement Cost</h2>
         <p class="text-brand-slate mt-4 max-w-2xl mx-auto text-lg">One price covers everything: the battery, mobile service, professional installation, and old battery recycling. No hidden fees.</p>
       </div>
 
       <div class="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <div class="bg-white rounded-2xl p-8 border border-gray-100 text-center shadow-sm hover:shadow-md transition-all duration-200 ease-out">
-          <h3 class="font-display text-xl text-brand-slate tracking-wide mb-2">STANDARD</h3>
-          <p class="text-brand-slate text-sm mb-4">Sedans, compacts, most cars</p>
-          <div class="mb-4">
-            <span class="font-display text-5xl text-brand-dark">$149</span>
+        <!-- Standard -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-border text-center hover:shadow-lg transition-all duration-200 ease-out">
+          <h3 class="font-display text-lg font-bold text-brand-slate mb-2">Standard</h3>
+          <p class="text-brand-slate text-sm mb-6">Sedans, compacts, most cars</p>
+          <div class="mb-6">
+            <span class="font-display text-5xl font-extrabold text-brand-dark">$149</span>
             <span class="text-brand-slate text-sm block mt-1">starting at</span>
           </div>
-          <ul class="text-brand-slate text-sm space-y-2 mb-6 text-left">
+          <ul class="text-brand-slate text-sm space-y-3 mb-8 text-left">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Top-brand battery</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Mobile installation</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Charging system test</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>3-year warranty</li>
           </ul>
-          <a href="#quote" class="block w-full bg-brand-dark hover:bg-brand-dark-light text-white font-semibold py-3 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer text-center">Get Quote</a>
+          <a href="#quote" class="block w-full border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white font-semibold py-3 rounded-xl transition-all duration-200 ease-out cursor-pointer text-center">Get Quote</a>
         </div>
 
-        <div class="bg-brand-dark rounded-2xl p-8 text-center relative ring-2 ring-brand-yellow shadow-sm hover:shadow-md transition-all duration-200 ease-out">
+        <!-- Premium / Most Popular -->
+        <div class="bg-white rounded-2xl p-8 border-2 border-brand-yellow text-center relative hover:shadow-lg transition-all duration-200 ease-out">
           <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-yellow text-brand-dark text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
-          <h3 class="font-display text-xl text-brand-yellow tracking-wide mb-2">PREMIUM</h3>
-          <p class="text-white/60 text-sm mb-4">SUVs, trucks, European vehicles</p>
-          <div class="mb-4">
-            <span class="font-display text-5xl text-white">$199</span>
-            <span class="text-white/50 text-sm block mt-1">starting at</span>
+          <h3 class="font-display text-lg font-bold text-brand-yellow-dark mb-2">Premium</h3>
+          <p class="text-brand-slate text-sm mb-6">SUVs, trucks, European vehicles</p>
+          <div class="mb-6">
+            <span class="font-display text-5xl font-extrabold text-brand-dark">$199</span>
+            <span class="text-brand-slate text-sm block mt-1">starting at</span>
           </div>
-          <ul class="text-white/70 text-sm space-y-2 mb-6 text-left">
+          <ul class="text-brand-slate text-sm space-y-3 mb-8 text-left">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>AGM / premium battery</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Mobile installation</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-yellow mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Full electrical system check</li>
@@ -542,14 +589,15 @@
           <a href="#quote" class="block w-full bg-brand-yellow hover:bg-brand-yellow-dark text-brand-dark font-bold py-3 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer text-center">Get Quote</a>
         </div>
 
-        <div class="bg-white rounded-2xl p-8 border border-gray-100 text-center shadow-sm hover:shadow-md transition-all duration-200 ease-out">
-          <h3 class="font-display text-xl text-brand-slate tracking-wide mb-2">FLEET & MARINE</h3>
-          <p class="text-brand-slate text-sm mb-4">Fleets, boats, RVs, jet skis</p>
-          <div class="mb-4">
-            <span class="font-display text-5xl text-brand-dark">Call</span>
+        <!-- Fleet & Marine -->
+        <div class="bg-white rounded-2xl p-8 border border-brand-border text-center hover:shadow-lg transition-all duration-200 ease-out">
+          <h3 class="font-display text-lg font-bold text-brand-slate mb-2">Fleet & Marine</h3>
+          <p class="text-brand-slate text-sm mb-6">Fleets, boats, RVs, jet skis</p>
+          <div class="mb-6">
+            <span class="font-display text-5xl font-extrabold text-brand-dark">Call</span>
             <span class="text-brand-slate text-sm block mt-1">for custom pricing</span>
           </div>
-          <ul class="text-brand-slate text-sm space-y-2 mb-6 text-left">
+          <ul class="text-brand-slate text-sm space-y-3 mb-8 text-left">
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Fleet volume discounts</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Marine & deep-cycle batteries</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>RV house + chassis batteries</li>
@@ -557,7 +605,7 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Dedicated account manager</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-brand-green mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Net-30 invoicing</li>
           </ul>
-          <a href="tel:+18005551234" class="block w-full bg-brand-dark hover:bg-brand-dark-light text-white font-semibold py-3 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer text-center">Call Us</a>
+          <a href="tel:+18005551234" class="block w-full border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white font-semibold py-3 rounded-xl transition-all duration-200 ease-out cursor-pointer text-center">Call Us</a>
         </div>
       </div>
 
@@ -566,15 +614,24 @@
   </section>
 
   <!-- ===== REVIEWS ===== -->
-  <section class="py-20 sm:py-28 bg-white">
+  <section class="py-24 sm:py-32 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Real Reviews</span>
-        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">DRIVERS LOVE US</h2>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark mt-3 font-bold">Drivers Love Us</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-brand-light rounded-2xl p-8">
+        <div class="bg-white rounded-2xl p-8 border border-brand-border shadow-sm">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-12 h-12 rounded-full bg-brand-yellow/15 flex items-center justify-center flex-shrink-0">
+              <span class="font-display font-bold text-brand-yellow text-lg">M</span>
+            </div>
+            <div>
+              <p class="font-display font-bold text-brand-dark">Maria G.</p>
+              <p class="text-brand-slate text-sm">Miami, FL &bull; 2024 Honda Accord</p>
+            </div>
+          </div>
           <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -582,12 +639,20 @@
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="text-brand-dark leading-relaxed mb-6">"My battery died in my driveway at 6 AM. Called The Battery Guys and a tech was at my house before 7. <strong>New battery installed in 20 minutes</strong> and I still made it to work on time. Way cheaper than the dealer quoted me."</p>
-          <p class="font-semibold text-brand-dark">Maria G.</p>
-          <p class="text-brand-slate text-sm">Miami, FL &bull; 2024 Honda Accord</p>
+          <svg class="w-8 h-8 text-brand-yellow/20 mb-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="text-brand-dark leading-relaxed">"My battery died in my driveway at 6 AM. Called The Battery Guys and a tech was at my house before 7. <strong>New battery installed in 20 minutes</strong> and I still made it to work on time. Way cheaper than the dealer quoted me."</p>
         </div>
 
-        <div class="bg-brand-light rounded-2xl p-8">
+        <div class="bg-white rounded-2xl p-8 border border-brand-border shadow-sm">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-12 h-12 rounded-full bg-brand-yellow/15 flex items-center justify-center flex-shrink-0">
+              <span class="font-display font-bold text-brand-yellow text-lg">J</span>
+            </div>
+            <div>
+              <p class="font-display font-bold text-brand-dark">James T.</p>
+              <p class="text-brand-slate text-sm">Fort Lauderdale, FL &bull; 2021 Toyota RAV4</p>
+            </div>
+          </div>
           <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -595,12 +660,20 @@
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="text-brand-dark leading-relaxed mb-6">"Car wouldn't start in the Publix parking lot. <strong>They came to the parking lot</strong>, tested my battery, and replaced it right there. The tech even checked my alternator to make sure nothing else was wrong. Great service."</p>
-          <p class="font-semibold text-brand-dark">James T.</p>
-          <p class="text-brand-slate text-sm">Fort Lauderdale, FL &bull; 2021 Toyota RAV4</p>
+          <svg class="w-8 h-8 text-brand-yellow/20 mb-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="text-brand-dark leading-relaxed">"Car wouldn't start in the Publix parking lot. <strong>They came to the parking lot</strong>, tested my battery, and replaced it right there. The tech even checked my alternator to make sure nothing else was wrong. Great service."</p>
         </div>
 
-        <div class="bg-brand-light rounded-2xl p-8">
+        <div class="bg-white rounded-2xl p-8 border border-brand-border shadow-sm">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-12 h-12 rounded-full bg-brand-yellow/15 flex items-center justify-center flex-shrink-0">
+              <span class="font-display font-bold text-brand-yellow text-lg">C</span>
+            </div>
+            <div>
+              <p class="font-display font-bold text-brand-dark">Carlos R.</p>
+              <p class="text-brand-slate text-sm">Boca Raton, FL &bull; Fleet Manager</p>
+            </div>
+          </div>
           <div class="flex gap-0.5 mb-4" aria-label="5 out of 5 stars">
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -608,83 +681,88 @@
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg class="w-5 h-5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="text-brand-dark leading-relaxed mb-6">"I manage a fleet of 15 delivery vans. <strong>The Battery Guys handle all our battery replacements on-site</strong> so our drivers don't lose hours at a shop. Saved us thousands this year. Highly recommend for businesses."</p>
-          <p class="font-semibold text-brand-dark">Carlos R.</p>
-          <p class="text-brand-slate text-sm">Boca Raton, FL &bull; Fleet Manager</p>
+          <svg class="w-8 h-8 text-brand-yellow/20 mb-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="text-brand-dark leading-relaxed">"I manage a fleet of 15 delivery vans. <strong>The Battery Guys handle all our battery replacements on-site</strong> so our drivers don't lose hours at a shop. Saved us thousands this year. Highly recommend for businesses."</p>
         </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="tel:+18005551234" class="inline-flex items-center justify-center gap-2 border-2 border-brand-yellow text-brand-yellow-dark hover:bg-brand-yellow hover:text-brand-dark font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 ease-out cursor-pointer">
+          Call (800) 555-1234
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ===== VEHICLE TYPES ===== -->
-  <section class="py-20 sm:py-28 bg-white">
+  <section class="py-24 sm:py-32 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">All Vehicle Types</span>
-        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">WE REPLACE BATTERIES FOR</h2>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark mt-3 font-bold">We Replace Batteries For</h2>
         <p class="text-brand-slate mt-4 max-w-2xl mx-auto text-lg">Cars, trucks, boats, RVs -- if it has a battery, we replace it on-site.</p>
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
-        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default">
+        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
           <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=400&q=80" alt="Car battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
-            <h3 class="font-display text-xl text-white tracking-wide">CARS</h3>
+            <h3 class="font-display text-lg font-bold text-white">Cars</h3>
             <p class="text-white/60 text-xs">All makes & models</p>
           </div>
         </div>
 
-        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default">
+        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
           <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=400&q=80" alt="Truck battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
-            <h3 class="font-display text-xl text-white tracking-wide">TRUCKS</h3>
+            <h3 class="font-display text-lg font-bold text-white">Trucks</h3>
             <p class="text-white/60 text-xs">Light & heavy duty</p>
           </div>
         </div>
 
-        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default">
+        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
           <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=400&q=80" alt="RV battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
-            <h3 class="font-display text-xl text-white tracking-wide">RVs</h3>
+            <h3 class="font-display text-lg font-bold text-white">RVs</h3>
             <p class="text-white/60 text-xs">House & chassis batteries</p>
           </div>
         </div>
 
-        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default">
+        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
           <img src="https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=400&q=80" alt="Motorhome battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
-            <h3 class="font-display text-xl text-white tracking-wide">MOTORHOMES</h3>
+            <h3 class="font-display text-lg font-bold text-white">Motorhomes</h3>
             <p class="text-white/60 text-xs">Class A, B & C</p>
           </div>
         </div>
 
-        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default">
+        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
           <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=400&q=80" alt="Motorcycle battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
-            <h3 class="font-display text-xl text-white tracking-wide">MOTORCYCLES</h3>
+            <h3 class="font-display text-lg font-bold text-white">Motorcycles</h3>
             <p class="text-white/60 text-xs">All brands & styles</p>
           </div>
         </div>
 
-        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default">
+        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
           <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Boat battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
-            <h3 class="font-display text-xl text-white tracking-wide">BOATS</h3>
+            <h3 class="font-display text-lg font-bold text-white">Boats</h3>
             <p class="text-white/60 text-xs">Marine batteries</p>
           </div>
         </div>
 
-        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default">
+        <div class="group relative rounded-2xl overflow-hidden aspect-square cursor-default ring-1 ring-brand-border hover:ring-2 hover:ring-brand-yellow/50 transition-all duration-200 ease-out">
           <img src="https://images.unsplash.com/photo-1626447857058-2ba6a8868cb5?auto=format&fit=crop&w=400&q=80" alt="Jet ski battery replacement" class="img-cover img-reveal transition-transform duration-500 group-hover:scale-110" loading="lazy" onload="this.classList.add('loaded')">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           <div class="absolute bottom-0 left-0 right-0 p-4">
-            <h3 class="font-display text-xl text-white tracking-wide">JET SKIS</h3>
+            <h3 class="font-display text-lg font-bold text-white">Jet Skis</h3>
             <p class="text-white/60 text-xs">PWC batteries</p>
           </div>
         </div>
@@ -693,12 +771,13 @@
   </section>
 
   <!-- ===== GUARANTEE ===== -->
-  <section class="py-16 sm:py-20 hero-gradient">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="py-20 sm:py-24 hero-gradient relative overflow-hidden">
+    <div class="hero-glow" style="top:-200px;right:-200px;"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <div class="w-16 h-16 bg-brand-yellow/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
         <svg class="w-8 h-8 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
-      <h2 class="font-display text-4xl sm:text-5xl text-white tracking-wide mb-4">THE BATTERY GUYS GUARANTEE</h2>
+      <h2 class="font-display text-3xl sm:text-4xl text-white font-bold mb-4">THE BATTERY GUYS Guarantee</h2>
       <p class="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed mb-8">Every battery we install comes with a <strong class="text-white">manufacturer warranty of up to 4 years</strong>, a free charging system diagnostic, and a satisfaction guarantee. If the battery we install has an issue, we'll come back and make it right -- free.</p>
       <div class="flex flex-wrap justify-center gap-6 text-white/60 text-sm">
         <span class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Up to 4-Year Battery Warranty</span>
@@ -709,61 +788,61 @@
   </section>
 
   <!-- ===== SERVICE AREAS (SEO) ===== -->
-  <section id="areas" class="py-20 sm:py-28 bg-brand-light">
+  <section id="areas" class="py-24 sm:py-32 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Mobile Battery Replacement Near You</span>
-        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-brand-dark mt-3 tracking-wide">MOBILE BATTERY REPLACEMENT IN SOUTH FLORIDA</h2>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-brand-dark mt-3 font-bold">Mobile Battery Replacement in South Florida</h2>
         <p class="text-brand-slate mt-4 max-w-2xl mx-auto text-lg">We serve the entire South Florida tri-county area -- Palm Beach, Broward, and Miami-Dade Counties. Our mobile technicians come to your home, office, or roadside location.</p>
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Miami</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Miami</h3>
           <p class="text-brand-slate text-sm">Miami-Dade County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Fort Lauderdale</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Fort Lauderdale</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">West Palm Beach</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">West Palm Beach</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Boca Raton</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Boca Raton</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Pompano Beach</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Pompano Beach</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Hollywood</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Hollywood</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Coral Springs</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Coral Springs</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Hialeah</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Hialeah</h3>
           <p class="text-brand-slate text-sm">Miami-Dade County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Homestead</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Homestead</h3>
           <p class="text-brand-slate text-sm">Miami-Dade County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Delray Beach</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Delray Beach</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Deerfield Beach</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Deerfield Beach</h3>
           <p class="text-brand-slate text-sm">Broward County</p>
         </a>
-        <a href="#quote" class="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
-          <h3 class="font-semibold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Boynton Beach</h3>
+        <a href="#quote" class="bg-white rounded-xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-md transition-all duration-200 ease-out cursor-pointer group">
+          <h3 class="font-display font-bold text-brand-dark group-hover:text-brand-yellow-dark transition-all duration-200 ease-out">Boynton Beach</h3>
           <p class="text-brand-slate text-sm">Palm Beach County</p>
         </a>
       </div>
@@ -773,84 +852,103 @@
   </section>
 
   <!-- ===== FAQ (SEO GOLDMINE) ===== -->
-  <section id="faq" class="py-20 sm:py-28 bg-white">
+  <section id="faq" class="py-24 sm:py-32 bg-stone-50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <span class="text-brand-yellow-dark font-semibold text-sm uppercase tracking-widest">Common Questions</span>
-        <h2 class="font-display text-4xl sm:text-5xl text-brand-dark mt-3 tracking-wide">CAR BATTERY REPLACEMENT FAQ</h2>
+        <h2 class="font-display text-3xl sm:text-4xl text-brand-dark mt-3 font-bold">Car Battery Replacement FAQ</h2>
       </div>
 
-      <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
-        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <div class="space-y-3" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="bg-white rounded-2xl border border-brand-border" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
-            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">How long does a mobile car battery replacement take?</h3>
-            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            <h3 class="font-display font-bold text-brand-dark text-lg pr-4" itemprop="name">How long does a mobile car battery replacement take?</h3>
+            <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center flex-shrink-0 faq-icon-wrap transition-all duration-200">
+              <svg class="w-4 h-4 text-brand-slate faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
           </button>
           <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <p class="text-brand-slate leading-relaxed" itemprop="text">Most car battery replacements take 20-30 minutes from the time our technician arrives. We test your old battery, install the new one, verify your charging system is working properly, and recycle the old battery -- all at your location.</p>
           </div>
         </div>
 
-        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="bg-white rounded-2xl border border-brand-border" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
-            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">How much does a mobile battery replacement cost in South Florida?</h3>
-            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            <h3 class="font-display font-bold text-brand-dark text-lg pr-4" itemprop="name">How much does a mobile battery replacement cost in South Florida?</h3>
+            <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center flex-shrink-0 faq-icon-wrap transition-all duration-200">
+              <svg class="w-4 h-4 text-brand-slate faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
           </button>
           <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <p class="text-brand-slate leading-relaxed" itemprop="text">Car battery replacement with The Battery Guys starts at $149 for standard vehicles, which includes the battery, mobile service, professional installation, and old battery disposal. SUVs, trucks, and European vehicles with AGM batteries typically start at $199. We quote you one upfront price with no hidden fees -- the price you see is the price you pay.</p>
           </div>
         </div>
 
-        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="bg-white rounded-2xl border border-brand-border" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
-            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">What brands of car batteries do you install?</h3>
-            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            <h3 class="font-display font-bold text-brand-dark text-lg pr-4" itemprop="name">What brands of car batteries do you install?</h3>
+            <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center flex-shrink-0 faq-icon-wrap transition-all duration-200">
+              <svg class="w-4 h-4 text-brand-slate faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
           </button>
           <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <p class="text-brand-slate leading-relaxed" itemprop="text">We carry top-tier battery brands including Interstate, DieHard, and Optima. Every battery we install meets or exceeds the OEM specifications for your specific vehicle. Our technicians will recommend the right battery based on your car's requirements and your driving habits.</p>
           </div>
         </div>
 
-        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="bg-white rounded-2xl border border-brand-border" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
-            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">Can you replace my car battery at my home or office?</h3>
-            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            <h3 class="font-display font-bold text-brand-dark text-lg pr-4" itemprop="name">Can you replace my car battery at my home or office?</h3>
+            <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center flex-shrink-0 faq-icon-wrap transition-all duration-200">
+              <svg class="w-4 h-4 text-brand-slate faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
           </button>
           <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <p class="text-brand-slate leading-relaxed" itemprop="text">Yes -- that's exactly what we do. Our mobile battery replacement service comes to wherever your car is: your home driveway, office parking lot, apartment complex, shopping center, airport parking, or even the side of the road. Anywhere in South Florida that's safe for us to work on your vehicle.</p>
           </div>
         </div>
 
-        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="bg-white rounded-2xl border border-brand-border" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
-            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">How do I know if I need a new car battery?</h3>
-            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            <h3 class="font-display font-bold text-brand-dark text-lg pr-4" itemprop="name">How do I know if I need a new car battery?</h3>
+            <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center flex-shrink-0 faq-icon-wrap transition-all duration-200">
+              <svg class="w-4 h-4 text-brand-slate faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
           </button>
           <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <p class="text-brand-slate leading-relaxed" itemprop="text">Common signs your car battery needs replacement: slow engine cranking, dim headlights, dashboard battery warning light, needing frequent jump starts, or a battery that's more than 3-4 years old (especially in Florida's heat, which shortens battery life). Our technicians can test your battery on-site for free and tell you exactly how much life it has left.</p>
           </div>
         </div>
 
-        <div class="bg-brand-light rounded-xl border border-gray-100" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="bg-white rounded-2xl border border-brand-border" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
           <button class="faq-toggle w-full flex items-center justify-between p-6 text-left cursor-pointer" aria-expanded="false">
-            <h3 class="font-semibold text-brand-dark text-lg pr-4" itemprop="name">Do you offer same-day car battery replacement?</h3>
-            <svg class="w-5 h-5 text-brand-slate flex-shrink-0 faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            <h3 class="font-display font-bold text-brand-dark text-lg pr-4" itemprop="name">Do you offer same-day car battery replacement?</h3>
+            <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center flex-shrink-0 faq-icon-wrap transition-all duration-200">
+              <svg class="w-4 h-4 text-brand-slate faq-icon transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
           </button>
           <div class="faq-answer px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <p class="text-brand-slate leading-relaxed" itemprop="text">Yes, we offer same-day mobile car battery replacement across South Florida, 7 days a week, including holidays. In most areas, we can have a technician to your location within 45 minutes of your call. For non-emergency replacements, you can also schedule a time that works for you.</p>
           </div>
         </div>
       </div>
+
+      <div class="text-center mt-12">
+        <a href="#quote" class="inline-flex items-center justify-center gap-2 border-2 border-brand-yellow text-brand-yellow-dark hover:bg-brand-yellow hover:text-brand-dark font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 ease-out cursor-pointer">
+          Get Your Free Quote
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- ===== FINAL CTA ===== -->
-  <section class="py-16 sm:py-20 bg-brand-red relative overflow-hidden">
+  <section class="py-20 sm:py-24 bg-brand-red relative overflow-hidden">
     <div class="absolute inset-0">
       <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80" alt="" class="img-cover opacity-10" loading="lazy" aria-hidden="true">
     </div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white tracking-wide">DEAD BATTERY? WE'RE ON OUR WAY.</h2>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-white font-bold">Dead Battery? We're on Our Way.</h2>
       <p class="text-white/80 mt-4 text-lg max-w-xl mx-auto">Call now for same-day mobile car battery replacement across South Florida. Upfront price, no hidden fees, installed at your location.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
         <a href="tel:+18005551234" class="inline-flex items-center justify-center gap-3 bg-white text-brand-red hover:bg-gray-50 font-bold text-xl px-10 py-5 rounded-xl transition-all duration-200 ease-out hover:scale-[1.02] cursor-pointer">
@@ -865,20 +963,34 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="bg-brand-dark pt-16 pb-24 sm:pb-8">
+  <footer class="bg-[#1C1917] pt-16 pb-24 sm:pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
         <div class="sm:col-span-2 lg:col-span-1">
-          <a href="/" class="flex items-center gap-2 cursor-pointer" aria-label="Home">
+          <a href="/" class="flex items-center gap-2.5 cursor-pointer" aria-label="Home">
             <svg class="w-7 h-7 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="18" rx="2"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/><path d="M12 10l-2 4h4l-2 4"/></svg>
-            <span class="font-display text-xl text-white tracking-wide">THE BATTERY GUYS</span>
+            <span class="font-display text-xl text-white font-bold tracking-tight">THE BATTERY GUYS</span>
           </a>
+          <p class="text-white/40 mt-3 text-sm font-medium">Serving South Florida</p>
+          <p class="text-white/30 text-sm">Palm Beach &bull; Broward &bull; Miami-Dade</p>
           <p class="text-white/50 mt-4 text-sm leading-relaxed">South Florida's mobile car battery replacement service. We come to you -- home, office, or roadside. Same-day service, every day.</p>
+          <!-- Social icons -->
+          <div class="flex gap-3 mt-5">
+            <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-200 ease-out cursor-pointer" aria-label="Facebook">
+              <svg class="w-4 h-4 text-white/50" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-200 ease-out cursor-pointer" aria-label="Instagram">
+              <svg class="w-4 h-4 text-white/50" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-200 ease-out cursor-pointer" aria-label="Google Business">
+              <svg class="w-4 h-4 text-white/50" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            </a>
+          </div>
         </div>
 
         <!-- SEO: Service keywords as footer links -->
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">OUR SERVICE</h4>
+          <h4 class="font-display text-sm font-bold text-white uppercase tracking-wider mb-4">Our Service</h4>
           <ul class="space-y-2.5">
             <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">Mobile Car Battery Replacement</a></li>
             <li><a href="#how-it-works" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">Truck Battery Installation</a></li>
@@ -892,7 +1004,7 @@
 
         <!-- SEO: Location keywords -->
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">SERVICE AREAS</h4>
+          <h4 class="font-display text-sm font-bold text-white uppercase tracking-wider mb-4">Service Areas</h4>
           <ul class="space-y-2.5">
             <li><a href="/areas/miami-battery-replacement.html" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">Battery Replacement Miami</a></li>
             <li><a href="/areas/fort-lauderdale-battery-replacement.html" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">Battery Replacement Fort Lauderdale</a></li>
@@ -904,13 +1016,27 @@
         </div>
 
         <div>
-          <h4 class="font-display text-lg text-white tracking-wide mb-4">CONTACT</h4>
+          <h4 class="font-display text-sm font-bold text-white uppercase tracking-wider mb-4">Contact</h4>
           <ul class="space-y-2.5">
             <li><a href="tel:+18005551234" class="text-brand-yellow font-semibold cursor-pointer">(800) 555-1234</a></li>
             <li><a href="mailto:help@thebatteryguys.com" class="text-white/50 hover:text-brand-yellow text-sm transition-all duration-200 ease-out cursor-pointer">help@thebatteryguys.com</a></li>
             <li><span class="text-white/50 text-sm">24/7/365 Service</span></li>
             <li><span class="text-white/50 text-sm">Licensed & Insured</span></li>
           </ul>
+          <!-- Trust badges -->
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 bg-white/5 text-white/60 text-xs px-3 py-1.5 rounded-lg">
+              <svg class="w-3.5 h-3.5 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Licensed & Insured
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white/5 text-white/60 text-xs px-3 py-1.5 rounded-lg">
+              <svg class="w-3.5 h-3.5 text-brand-yellow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              4.9 on Google
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white/5 text-white/60 text-xs px-3 py-1.5 rounded-lg">
+              50,000+ Replaced
+            </span>
+          </div>
         </div>
       </div>
 
@@ -925,14 +1051,14 @@
   </footer>
 
   <!-- ===== FLOATING MOBILE CTA ===== -->
-  <div class="fixed bottom-0 left-0 right-0 z-40 bg-brand-dark/90 backdrop-blur-xl border-t border-white/10 p-3 sm:hidden">
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-xl border-t border-brand-border p-3 sm:hidden shadow-lg shadow-black/5">
     <div class="flex gap-2">
-      <a href="tel:+18005551234" class="flex-1 flex items-center justify-center gap-2 bg-brand-red text-white font-bold py-3.5 rounded-xl cursor-pointer">
+      <a href="#quote" class="flex-1 flex items-center justify-center gap-2 bg-brand-yellow text-brand-dark font-bold py-3.5 rounded-2xl cursor-pointer">
+        Get Quote
+      </a>
+      <a href="tel:+18005551234" class="flex-1 flex items-center justify-center gap-2 bg-brand-red text-white font-bold py-3.5 rounded-2xl cursor-pointer">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         Call Now
-      </a>
-      <a href="#quote" class="flex-1 flex items-center justify-center gap-2 bg-brand-yellow text-brand-dark font-bold py-3.5 rounded-xl cursor-pointer">
-        Free Quote
       </a>
     </div>
   </div>
@@ -950,7 +1076,7 @@
     document.addEventListener('click', (e) => { if (menu.classList.contains('open') && !menu.contains(e.target) && !menuBtn.contains(e.target)) { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }});
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('open')) { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.focus(); }});
 
-    // FAQ accordion
+    // FAQ accordion with plus/minus toggle
     document.querySelectorAll('.faq-toggle').forEach(btn => {
       btn.addEventListener('click', () => {
         const answer = btn.nextElementSibling;
@@ -959,19 +1085,22 @@
 
         // Close all
         document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-        document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = '');
+        document.querySelectorAll('.faq-icon').forEach(i => {
+          i.innerHTML = '<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>';
+        });
         document.querySelectorAll('.faq-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
 
         // Open clicked (if it was closed)
         if (!isOpen) {
           answer.classList.add('open');
-          icon.style.transform = 'rotate(180deg)';
+          // Change to minus icon
+          icon.innerHTML = '<line x1="5" y1="12" x2="19" y2="12"/>';
           btn.setAttribute('aria-expanded', 'true');
         }
       });
     });
 
-    // Navbar scroll
+    // Navbar scroll - glass effect with white bg
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
   </script>

@@ -28,7 +28,9 @@
   <style>
     body { font-family: 'Inter', sans-serif; color: #1C1917; background: #FAFAF9; }
     .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .hero-gradient { background: linear-gradient(135deg, #1C1917 0%, #292524 60%, #1C1917 100%); }
+    .hero-gradient { background: linear-gradient(135deg, #1C1917 0%, #292524 60%, #1C1917 100%); position: relative; overflow: hidden; }
+    .hero-gradient::before { content: ""; position: absolute; inset: 0; background: url("https://images.unsplash.com/photo-1535498730771-e735b998cd64?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat; opacity: 0.12; z-index: 0; }
+    .hero-gradient > * { position: relative; z-index: 1; }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
     .faq-answer.open { max-height: 300px; }
     a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #F59E0B; outline-offset: 2px; }
@@ -70,7 +72,7 @@
         <a href="/#how-it-works" class="text-white/70 hover:text-[#F59E0B] text-sm font-medium cursor-pointer">How It Works</a>
         <a href="/#pricing" class="text-white/70 hover:text-[#F59E0B] text-sm font-medium cursor-pointer">Pricing</a>
         <a href="/learn/" class="text-white/70 hover:text-[#F59E0B] text-sm font-medium cursor-pointer">Learning Center</a>
-        <a href="tel:+18005551234" class="bg-[#DC2626] hover:bg-red-700 text-white font-bold px-5 py-2.5 rounded-lg text-sm cursor-pointer">(800) 555-1234</a>
+        <a href="tel:+18005551234" class="bg-[#DC2626] hover:bg-red-700 text-white font-bold px-5 py-3 rounded-lg text-sm cursor-pointer">(800) 555-1234</a>
       </div>
       <button id="mobileMenuBtn" class="md:hidden p-2 cursor-pointer" aria-label="Open menu" aria-expanded="false">
         <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -161,7 +163,7 @@
     </div>
   </section>
 
-  <section class="bg-brand-yellow py-12">
+  <section class="bg-brand-yellow py-16">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="font-display text-3xl sm:text-4xl text-brand-dark mb-4">Dead Battery in Deerfield? We're Close By.</h2>
       <p class="text-brand-dark/80 mb-6 text-lg">Same-day battery replacement from the pier to Quiet Waters Park.</p>

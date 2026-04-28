@@ -62,10 +62,33 @@
 </head>
 <body class="antialiased">
 
-  <nav class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-xl border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-      <a href="/" class="flex items-center gap-2"><svg class="w-7 h-7 text-brand-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="18" rx="2"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/><path d="M12 10l-2 4h4l-2 4"/></svg><span class="font-display text-2xl text-white tracking-tight">THE BATTERY GUYS</span></a>
-      <a href="tel:+18005551234" class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-hover text-white font-semibold px-4 py-2 rounded-lg text-sm transition-all"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(800) 555-1234</a>
+  <nav class="sticky top-0 z-50 bg-[#1C1917] backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="/" class="flex items-center gap-2 cursor-pointer" aria-label="Home">
+        <svg class="w-7 h-7 text-[#F59E0B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="18" rx="2"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/><path d="M12 10l-2 4h4l-2 4"/></svg>
+        <span class="font-display font-bold text-xl text-white tracking-tight">THE BATTERY GUYS</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="/#how-it-works" class="text-white/70 hover:text-[#F59E0B] text-sm font-medium cursor-pointer">How It Works</a>
+        <a href="/#pricing" class="text-white/70 hover:text-[#F59E0B] text-sm font-medium cursor-pointer">Pricing</a>
+        <a href="/learn/" class="text-white/70 hover:text-[#F59E0B] text-sm font-medium cursor-pointer">Learning Center</a>
+        <a href="tel:+18005551234" class="bg-[#DC2626] hover:bg-red-700 text-white font-bold px-5 py-2.5 rounded-lg text-sm cursor-pointer">(800) 555-1234</a>
+      </div>
+      <button id="mobileMenuBtn" class="md:hidden p-2 cursor-pointer" aria-label="Open menu" aria-expanded="false">
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="mobileOverlay" class="fixed inset-0 bg-black/50 z-[9998] hidden md:hidden" aria-hidden="true"></div>
+    <div id="mobileMenu" class="fixed top-0 right-0 w-72 h-full bg-[#1C1917] z-[9999] p-6 flex flex-col gap-5 md:hidden" style="transform:translateX(100%);transition:transform .25s ease-out" role="dialog" aria-label="Navigation">
+      <button id="mobileMenuClose" class="self-end p-2 cursor-pointer" aria-label="Close menu">
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <a href="/" class="text-white text-lg font-medium cursor-pointer mobile-link">Home</a>
+      <a href="/#how-it-works" class="text-white text-lg font-medium cursor-pointer mobile-link">How It Works</a>
+      <a href="/#pricing" class="text-white text-lg font-medium cursor-pointer mobile-link">Pricing</a>
+      <a href="/learn/" class="text-white text-lg font-medium cursor-pointer mobile-link">Learning Center</a>
+      <a href="/#areas" class="text-white text-lg font-medium cursor-pointer mobile-link">Service Areas</a>
+      <a href="tel:+18005551234" class="mt-4 flex items-center justify-center gap-2 bg-[#DC2626] text-white font-bold px-5 py-3 rounded-lg cursor-pointer">Call (800) 555-1234</a>
     </div>
   </nav>
 
@@ -166,5 +189,8 @@
       </div>
     </div>
   </section>
+<script>
+(function(){var b=document.getElementById('mobileMenuBtn'),c=document.getElementById('mobileMenuClose'),m=document.getElementById('mobileMenu'),o=document.getElementById('mobileOverlay');if(!b||!m)return;function open(){m.style.transform='translateX(0)';o&&o.classList.remove('hidden');document.body.style.overflow='hidden';b.setAttribute('aria-expanded','true')}function close(){m.style.transform='translateX(100%)';o&&o.classList.add('hidden');document.body.style.overflow='';b.setAttribute('aria-expanded','false')}b.addEventListener('click',open);c&&c.addEventListener('click',close);o&&o.addEventListener('click',close);document.querySelectorAll('.mobile-link').forEach(function(l){l.addEventListener('click',close)});document.addEventListener('keydown',function(e){if(e.key==='Escape')close()})})();
+</script>
 </body>
 </html>
